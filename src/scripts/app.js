@@ -1,38 +1,61 @@
+// ### LIBRARIES & SYSTEM
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
 
-const app () {
+// ### COMPONENTS & VARIABLES
+import Home from './views/home'
+import Login from './views/login'
+import CandidateAdd from './views/candidatesAdd'
+import StyleGuide from './views/styleguide'
 
-	const Controller = new Backbone.Router.extend({
+const app = function() {
+
+	const Controller = Backbone.Router.extend({
 
 		// ### BACKBONE ROUTES
 		routes: {
 			'home' : 'handleHome',
 			'candidates' : 'handleCandidates',
+			'candidates/add' : 'handleAdd',
 			'candidates/:id' : 'handleCandidate',
 			'login' : 'handleLogin',
 			'docs' : 'handleDocs',
+			'styles' : 'handleStyles',
 			'*default' : 'handleDefault'
 		},
 		// ### ROUTE HANDLERS
 		handleHome() {
-			ReactDOM.render(<Home />, document.querySelector('body_container'))
+			console.log('handlehome')
+			ReactDOM.render(<Home />, document.querySelector('.body_container'))
 		},
 		handleCandidates() {
+			console.log('handlecandies')
 			ReactDOM.render(<CandidatesListing />, document.querySelector('.body_container'))
 		},
 		handleCandidate() {
+			console.log('handlecandy')
 			ReactDOM.render(<CandidateView />, document.querySelector('.body_container'))
 		},
+		handleAdd() {
+			console.log('handleadd')
+			ReactDOM.render(<CandidateAdd />, document.querySelector('.body_container'))
+		},
 		handleLogin() {
-			ReactDOM.render(<Login />, document.querySelector('.body_container'))
+			console.log('handlelogin')
+				ReactDOM.render(<Login />, document.querySelector('.body_container'))
 		},
 		handleDocs() {
+			console.log('handledocs')
 			ReactDOM.render(<Docs />, document.querySelector('.body_container'))
 		},
+		handleStyles() {
+			console.log('handleStyles')
+			ReactDOM.render(<StyleGuide />, document.querySelector('.body_container'))
+		},
 		handleDefault() {
+			console.log('handledefault')
 			location.hash = 'home'
 		},
 		initialize() {
@@ -41,11 +64,13 @@ const app () {
 
 	})
 
+	new Controller()
+
 }
 
-const app = function() {
-  document.querySelector('.container').innerHTML = "<h1>Woah!</h1>"
-}
+// const app = function() {
+//   document.querySelector('.container').innerHTML = "<h1>Woah!</h1>"
+// }
 
 // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..
 // NECESSARY FOR USER FUNCTIONALITY. DO NOT CHANGE. 

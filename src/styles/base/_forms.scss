@@ -1,0 +1,53 @@
+.button, select {
+	color: $grey;
+	font-size: 0.83rem;
+	font-weight: 700;
+	padding: 0 2.5rem;
+	height: 2.5rem;
+	margin: 0 1rem 1rem 0;
+	border: 1px solid $outline;
+	background-color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	&:hover, &:active {
+		color: white;
+		background-color: $red;
+		border-color: $red;
+		transition: all 0.2s ease;
+	}
+}
+.prm-but {
+
+}
+.sec-but {
+	color: white;
+	background-color: $red;
+	border-color: $red;
+	&:hover, &:active {
+		background-color: $blue;
+		border-color: $blue;
+	}
+}
+.ter-but {
+	color: white;
+	background-color: $blue;
+	border-color: $blue;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="tel"], input[type="number"], input[type="search"], input[type="date"], input[type="time"], input[type="color"], input[type="datalist"], textarea {
+	font-family: $body;
+	font-size: 1rem;
+	font-weight: 400;
+	border: 1px solid $outline;
+	padding: 0.5rem 0.7rem;
+	margin: 0.5rem 0 0.5rem;
+	border-radius: 3px;
+	display: block;
+	clear:both;
+}
+select {
+	-webkit-appearance: none;
+	display: block;
+
+}

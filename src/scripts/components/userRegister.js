@@ -4,28 +4,27 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import Header from '../components/header'
-import Footer from '../components/footer'
 
 // ### PRIMARY COMPONENTS
 const UserRegister = React.createClass({
 	_createUser(e) {
 		e.preventDefault()
+		console.log(e.target)
 		let user = {
-			username: e.target.value.username,
-			email: e.target.value.email,
-			password: e.target.value.password
+			username: e.target.username.value,
+			email: e.target.email.value,
+			password: e.target.password.value
 		}
 		Actions.createUser(user)
-	}
+	},
 	render() {
 		return (
-			<form onSubmit={this._createUser}>
+			<form id="register_form" onSubmit={this._createUser}>
 				<h3>Create Account</h3>
 				<p></p>
 				<div className="username">
 					<label>Username</label>
-					<input name="username" type="username" />
+					<input name="username" type="text" />
 					<div className="description">Please choose a username</div>
 				</div>
 				<div className="user_email">
@@ -34,12 +33,12 @@ const UserRegister = React.createClass({
 					<div className="description">Please enter your email</div>
 				</div>
 				<div className="user_password">
-					<label>Email</label>
+					<label>Password</label>
 					<input name="password" type="password" />
 					<div className="description">Please enter your password</div>
 				</div>
 				<div className="user_actions">
-					<button type="submit">Create Account</button>
+					<button type="submit" className="button sec-but">Create Account</button>
 				</div>
 			</form>
 		)

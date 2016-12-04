@@ -4,8 +4,7 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import Header from '../components/header'
-import Footer from '../components/footer'
+import { Header, Footer } from './components/pageComponents'
 
 // ### PRIMARY COMPONENTS
 const MyComponent = React.createClass({

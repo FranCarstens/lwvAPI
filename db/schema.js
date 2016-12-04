@@ -10,6 +10,7 @@ const usersSchema = new mongoose.Schema({
   // x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x..x
   
    // example of optional fields
+  username: String,
   name:      { type: String },
   createdAt: { type: Date, default: Date.now }
 
@@ -36,6 +37,6 @@ const candidateSchema = new mongoose.Schema({
 
 
 module.exports = {
-  User: mongoose.model('User', usersSchema)
+  User: mongoose.model('User', usersSchema),
   Candidate: mongoose.model('Candidate', candidateSchema)
 }

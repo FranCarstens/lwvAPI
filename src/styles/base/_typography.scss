@@ -1,0 +1,39 @@
+// IMPORT FONTS
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Lora:400,400i,700');
+
+// BASE TYPOGRAPHY
+
+body {
+	font-family: $body;
+	line-height: 1.7;
+}
+
+// HEADINGS
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $title;
+	font-weight: 400;
+}
+h1, h2, h3 {
+	
+}
+h2 {
+}
+h3 {
+}
+p {
+	
+}
+a, a:link, a:visited {
+	color: black;
+}
+a:hover {
+	color: $textred;
+}
+a, a:link, a:visited, a:hover {
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+legend {
+	text-transform: uppercase;
+}

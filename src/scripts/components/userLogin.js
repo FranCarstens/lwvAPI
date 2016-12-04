@@ -4,20 +4,18 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import Header from '../components/header'
-import Footer from '../components/footer'
 
 // ### PRIMARY COMPONENTS
 const UserLogin = React.createClass({
 	_authenticateUser(e) {
 		e.preventDefault()
-		let email = e.target.value.email,
-			password = e.target.value.password
+		let email = e.target.email.value,
+			password = e.target.password.value
 		Actions.authenticateUser(email, password)
 	},
 	render() {
 		return (
-			<form onSubmit={this._authenticateUser}>
+			<form id="login_form" onSubmit={this._authenticateUser}>
 				<h3>Login</h3>
 				<p>Welcome back.</p>
 				<div className="user_email">
@@ -26,12 +24,12 @@ const UserLogin = React.createClass({
 					<div className="description">Please enter your email</div>
 				</div>
 				<div className="user_password">
-					<label>Email</label>
+					<label>Password</label>
 					<input name="password" type="password" />
 					<div className="description">Please enter your password</div>
 				</div>
-				<div className="user_actions">
-					<button type="submit">Login</button>
+				<div className="user_actions form_actions">
+					<button type="submit" className="button prm-but">Login</button>
 				</div>
 			</form>
 		)
