@@ -21,6 +21,7 @@ const candidateSchema = new mongoose.Schema({
 	firstName: { type: String, required: true },
 	middleNames: String,
 	lastName: { type: String, required: true},
+	avatar: String,
 	education: Array,
 	professionalExperience: Array,
 	communityInvolvement: Array,
@@ -31,7 +32,9 @@ const candidateSchema = new mongoose.Schema({
 	twitter: String,
 	address: Object,
 	partyAffiliation: { type: String, required: true },
-	electionRace: { type: String, required: true }
+	electionCycle: { type: String, required: true },
+	electionRace: { type: String, required: true },
+	questions: Array
 
 })
 

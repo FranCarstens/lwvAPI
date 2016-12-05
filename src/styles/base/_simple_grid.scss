@@ -1,0 +1,22 @@
+[class^="_sg-"], [class*=" _sg-"] {
+	@media #{$tablet} {
+		float:left;
+		padding: 0 0.5rem;
+	}
+}
+._sg-1 	{ @media #{$tablet} {width: (100%/12) } }
+._sg-2 	{ @media #{$tablet} {width: (100%/6) } }
+._sg-3 	{ @media #{$tablet} {width: (100%/4) } }
+._sg-4 	{ @media #{$tablet} {width: (100%/3) } }
+._sg-5 	{ @media #{$tablet} {width: (100%/12*5) } }
+._sg-6 	{ @media #{$tablet} {width: (100%/2) } }
+._sg-8 	{ @media #{$tablet} {width: (100%/12*8) } }
+._sg-9 	{ @media #{$tablet} {width: (100%/12*9) } }
+._sg-12 { @media #{$tablet} {width: (100%/1); clear: both; } }
+
+._cl {
+	clear: left;
+}
+._cr {
+	clear: right;
+}

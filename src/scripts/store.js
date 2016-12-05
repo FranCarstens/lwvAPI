@@ -1,12 +1,14 @@
 // ### LIBRARIES & SYSTEM
 import Backbone from 'backbone'
 import _ from 'underscore'
+import {CandidateModel, CandidateCollection} from './models/candidateModels'
 
 // ### COMPONENTS & VARIABLES
 
 // ### PRIMARY COMPONENTS
 const Store = _.extend(Backbone.Events, {
 	_data: {
+		candidates: new CandidateCollection()
 	},
 	_getDataProp(Prop) {
 		return this._data[Prop]

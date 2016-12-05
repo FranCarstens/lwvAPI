@@ -1,0 +1,23 @@
+.candidate_form_container {
+	input, textarea {
+		width: 100%;
+	}
+	input.button {
+		width: auto
+	}
+}
+@media #{$tablet} {
+
+
+
+
+
+
+
+
+
+
+	.candidate_form_container {
+		max-width: 768px;	
+	}
+}

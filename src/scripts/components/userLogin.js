@@ -20,13 +20,13 @@ const UserLogin = React.createClass({
 				<p>Welcome back.</p>
 				<div className="user_email">
 					<label>Email</label>
-					<input name="email" type="email" />
 					<div className="description">Please enter your email</div>
+					<input name="email" type="email" />
 				</div>
 				<div className="user_password">
 					<label>Password</label>
-					<input name="password" type="password" />
 					<div className="description">Please enter your password</div>
+					<input name="password" type="password" />
 				</div>
 				<div className="user_actions form_actions">
 					<button type="submit" className="button prm-but">Login</button>

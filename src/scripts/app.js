@@ -7,6 +7,7 @@ import init from './init'
 // ### COMPONENTS & VARIABLES
 import Home from './views/home'
 import Login from './views/login'
+import CandidatesListing from './views/candidatesListing'
 import CandidateAdd from './views/candidatesAdd'
 import StyleGuide from './views/styleguide'
 

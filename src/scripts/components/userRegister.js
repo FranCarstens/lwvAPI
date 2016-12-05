@@ -24,20 +24,20 @@ const UserRegister = React.createClass({
 				<p></p>
 				<div className="username">
 					<label>Username</label>
-					<input name="username" type="text" />
 					<div className="description">Please choose a username</div>
+					<input name="username" type="text" />
 				</div>
 				<div className="user_email">
 					<label>Email</label>
-					<input name="email" type="email" />
 					<div className="description">Please enter your email</div>
+					<input name="email" type="email" />
 				</div>
 				<div className="user_password">
 					<label>Password</label>
-					<input name="password" type="password" />
 					<div className="description">Please enter your password</div>
+					<input name="password" type="password" />
 				</div>
-				<div className="user_actions">
+				<div className="user_actions form_actions">
 					<button type="submit" className="button sec-but">Create Account</button>
 				</div>
 			</form>

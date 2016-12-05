@@ -2,6 +2,7 @@
 import React from 'react'
 import Store from './store'
 import User from './models/userModel'
+import {CandidateModel, CandidateCollection} from './models/candidateModels'
 
 // ### COMPONENTS & VARIABLES
 
@@ -38,6 +39,30 @@ const Actions = {
 				(err) => { console.log('logout failed', err) }
 			)
 		location.hash = 'home'
+	},
+	// ### CANDIDATE ACTIONS
+	addCandidate(newCandidate) {
+		let candidate = new CandidateModel(newCandidate)
+		candidate.save()
+			.done(resp => {
+				console.log('candidate saved successfull', resp)
+				location.hash = 'home'
+			})
+			.fail(resp => console.log('candidate save failed', resp))
+	},
+	fetchCandidates() {
+		let candiColl = new CandidateCollection()
+		candiColl.fetch()
+			.then( () => {
+				Store._setData({
+					candidates: candiColl
+				})
+			})
+	},
+	// HELP FUNCTIONS
+	sanitizePhone(phone) {
+		let no = phone.replace(/[^\d]/g,'')
+		return no.substring(no.length-10)
 	}
 }
 

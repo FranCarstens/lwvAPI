@@ -1,18 +1,20 @@
 // ABSTRACTIONS
-@import "abstractions/_layout.scss";
+@import "abstractions/_layout";
 
 // VARIABLES
-@import "variables/_colors.scss";
-@import "variables/_queries.scss";
-@import "variables/_typography.scss";
+@import "variables/_colors";
+@import "variables/_queries";
+@import "variables/_typography";
 
 // BASE
 @import "base/_reset";
 @import "base/_block_level";
-@import "base/_footer.scss";
-@import "base/_forms.scss";
-@import "base/_header.scss";
+@import "base/_footer";
+@import "base/_forms";
+@import "base/_header";
+@import "base/_simple_grid";
 @import "base/_typography";
 
 // COMPONENTS
-@import "components/_login.scss";
+@import "components/_login";
+@import "components/_add_candidate";

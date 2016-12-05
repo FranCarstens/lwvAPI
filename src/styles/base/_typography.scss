@@ -1,11 +1,12 @@
 // IMPORT FONTS
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Lora:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Lora:300,400,400i,700');
 
 // BASE TYPOGRAPHY
 
 body {
 	font-family: $body;
 	line-height: 1.7;
+	// font-weight: 300;
 }
 
 // HEADINGS
@@ -22,7 +23,6 @@ h2 {
 h3 {
 }
 p {
-	
 }
 a, a:link, a:visited {
 	color: black;
@@ -34,6 +34,28 @@ a, a:link, a:visited, a:hover {
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
-legend {
-	text-transform: uppercase;
+label {
+	color: $grey
+}
+.description {
+	font-size: 0.85rem;
+	margin-top: -0.425rem;
+	display:none;
+}
+fieldset {
+	legend {
+		text-transform: uppercase;
+		font-size: 1.25rem;
+		padding-left: 0.5rem;
+		color: $textblue;
+		font-family: $title
+	}
+	fieldset {
+		legend {
+			font-size: 1rem;
+			padding-left: 0;
+			font-family: $body;
+			color: $grey;
+		}
+	}
 }
