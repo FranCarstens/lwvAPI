@@ -73,6 +73,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-dropzone": "^3.7.3",
+    "superagent": "^3.1.0"
   }
 }

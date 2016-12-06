@@ -66,7 +66,10 @@ app.use( appMiddleWare.cookifyUser )
 app.use( appMiddleWare.parseQuery )
 
 // ### ADDING MULTER P 1
-// app.use(multer({ dest: './uploads/'}))
+var upload = multer({ dest: './upload'});
+app.post('/upload', upload.single('csv'), function(req, res, next){
+  res.end(req.file);
+});
 
 
 

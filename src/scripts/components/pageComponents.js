@@ -14,6 +14,7 @@ export const Header = React.createClass({
 					<ul>
 						<li><a href="#candidates">Candidates</a></li>
 						<li><a href="#candidates/add">Add</a></li>
+						<li><a href="#candidates/import">Import</a></li>
 						<li><a href="#login">Login</a></li>
 						<li><a href="#" onClick={Actions.logoutUser}>Logout</a></li>
 					</ul>

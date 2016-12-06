@@ -9,6 +9,7 @@ import Home from './views/home'
 import Login from './views/login'
 import CandidatesListing from './views/candidatesListing'
 import CandidateAdd from './views/candidatesAdd'
+import CandidateImport from './views/candidatesImport'
 import StyleGuide from './views/styleguide'
 
 const app = function() {
@@ -20,6 +21,7 @@ const app = function() {
 			'home' : 'handleHome',
 			'candidates' : 'handleCandidates',
 			'candidates/add' : 'handleAdd',
+			'candidates/import': 'handleImport',
 			'candidates/:id' : 'handleCandidate',
 			'login' : 'handleLogin',
 			'docs' : 'handleDocs',
@@ -42,6 +44,10 @@ const app = function() {
 		handleAdd() {
 			console.log('handleadd')
 			ReactDOM.render(<CandidateAdd />, document.querySelector('.body_container'))
+		},
+		handleImport() {
+			console.log('handleimport')
+			ReactDOM.render(<CandidateImport />, document.querySelector('.body_container'))
 		},
 		handleLogin() {
 			console.log('handlelogin')

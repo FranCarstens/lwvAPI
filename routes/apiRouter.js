@@ -79,10 +79,10 @@ apiRouter
 // ### FILES UPLOAD ROUTES
 
 apiRouter
-	.post('/uploadCSV', function(req,res) {
-		var uploadDir = __dirname + '/uploads'
-		var files = fs.readdirSync(uploadDir)
-		console.log(files)
+	.post('/upload', function(req,res) {
+		// var uploadDir = __dirname + '/uploads'
+		// var files = fs.readdirSync(uploadDir)
+		// console.log(files)
 		res.status(200).json(files)
 	})
 

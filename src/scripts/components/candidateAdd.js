@@ -12,7 +12,6 @@ const AddCandidate = React.createClass({
 		return (
 			<div className="forms_container">
 				<CandidateAddForm />
-				<CandidateImportForm />
 			</div>
 		)
 	}
@@ -170,28 +169,6 @@ const CandidateAddForm = React.createClass({
 							<button type="submit" className="submit button sec-but">Add Candidate</button>
 						</div>
 					</fieldset>
-				</form>
-			</div>
-		)
-	}
-})
-
-const CandidateImportForm = React.createClass({
-	componentDidMount: function() {
-		window.form = this.refs.daForm
-	},
-
-	_importCandidate(e) {
-		e.preventDefault()
-		let file = e.target.file.files
-		Actions.importCandidate(file)
-	},
-	render() {
-		return (
-			<div className="candidate_form_container">
-				<form ref="daForm" encType="multipart/form-data" onSubmit={this._importCandidate}>
-					<input name="file" type="file" />
-					<button type="submit" className="submit button sec-but">Import</button>
 				</form>
 			</div>
 		)
