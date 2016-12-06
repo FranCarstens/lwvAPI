@@ -1,12 +1,12 @@
 .button, select {
-	color: $grey;
+	color: $borders;
 	font-size: 0.83rem;
 	font-weight: 700;
-	padding: 0 2.5rem;
+	padding: 0 2rem;
 	height: 2.5rem;
 	margin: 0 1rem 1rem 0;
 	border: 1px solid $outline;
-	background-color: white;
+	background-color: $outline;
 	border-radius: 3px;
 	cursor: pointer;
 	transition: all 0.2s ease;
@@ -16,6 +16,9 @@
 		border-color: $red;
 		transition: all 0.2s ease;
 	}
+}
+.button:hover {
+	// transform: translate(0px, 2px);
 }
 .prm-but {
 
@@ -42,12 +45,12 @@ input[type="text"], input[type="email"], input[type="password"], input[type="url
 	border: 1px solid $outline;
 	padding: 0.5rem 0.7rem;
 	margin: 0.25rem 0 0.75rem;
-	border-radius: 3px;
+	// border-radius: 3px;
 	display: block;
 	clear:both;
 	&:active, &:focus, &:hover {
 		outline: none;
-		border-left: 3px solid $blue;
+		border-left: 3px solid black;
 		background-color: $shadow;
 	}
 }
@@ -59,12 +62,15 @@ select {
 	display: block;
 
 }
+article {
+	border-bottom: 2px dotted $borders;
+}
 fieldset {
-	border-bottom: 3px solid $outline;
+	border-bottom: 1px dotted $lgrey;
 	padding: 1rem 0;
 	margin: 1rem 0;
-	fieldset {
-		border-bottom: 1px dotted $outline;
+	&:last-child {
+		border: none;
 	}
 }
 .form_actions, .user_actions {

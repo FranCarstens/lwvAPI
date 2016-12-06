@@ -1,12 +1,12 @@
 // IMPORT FONTS
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Lora:300,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Playfair+Display:400,400i,700,700i');
 
 // BASE TYPOGRAPHY
 
 body {
 	font-family: $body;
 	line-height: 1.7;
-	// font-weight: 300;
+	font-weight: 300;
 }
 
 // HEADINGS
@@ -14,13 +14,20 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: $title;
 	font-weight: 400;
+	margin-bottom: 1rem;
 }
 h1, h2, h3 {
-	
+	font-weight: 700;
+	font-style: italic;
+}
+h1 {
+	font-size: 1.85rem;
 }
 h2 {
+	font-size: 1.65rem;
 }
 h3 {
+	font-size: 1.45rem;
 }
 p {
 }
@@ -35,7 +42,9 @@ a, a:link, a:visited, a:hover {
 	transition: all 0.2s ease;
 }
 label {
-	color: $grey
+	font-weight: 400;
+	font-size: 0.75rem;
+	text-transform: uppercase;
 }
 .description {
 	font-size: 0.85rem;
@@ -44,18 +53,24 @@ label {
 }
 fieldset {
 	legend {
-		text-transform: uppercase;
-		font-size: 1.25rem;
+		font-size: 1.45rem;
+		font-family: $title;
+		font-weight: 700;
+		font-style: italic;
 		padding-left: 0.5rem;
-		color: $textblue;
-		font-family: $title
+
 	}
 	fieldset {
 		legend {
 			font-size: 1rem;
+			font-style: bold;
 			padding-left: 0;
 			font-family: $body;
-			color: $grey;
 		}
 	}
+}
+.dropCap {
+	font-family: $title;
+	font-size: 1.5rem;
+	color: $lgrey;
 }

@@ -1,0 +1,11 @@
+section.content {
+	padding: 2rem 1rem;
+}
+
+@media #{$narrow} {
+	section.content {
+		width: 768px;
+		margin: 0 auto;
+	}
+
+}

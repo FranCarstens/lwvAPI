@@ -17,7 +17,7 @@ const AddCandidate = React.createClass({
 		)
 	}
 })
-
+// <CandidateAddForm />
 const CandidateAddForm = React.createClass({
 	_makeArray(e,identifier) {
 		let inputs = document.querySelectorAll('.group_' + identifier + ' input'),
@@ -57,10 +57,10 @@ const CandidateAddForm = React.createClass({
 				facebook: form.facebook.value,
 				twitter: form.twitter.value,
 				address: {
-					'street-address': form.streetAddress.value,
+					'streetAddress': form.streetAddress.value,
 					'locality': form.locality.value,
 					'region': form.region.value,
-					'postal-code': form.postalCode.value,
+					'postalCode': form.postalCode.value,
 					'country-name': 'US'
 				},
 				partyAffiliation: form.party.value,
@@ -106,7 +106,7 @@ const CandidateAddForm = React.createClass({
 					<legend>Contact Details</legend>
 						<div className="email _sg-6">
 							<label htmlFor="email">Email</label>
-							<input name="email" type="email" />
+							<input name="email" require type="email" />
 						</div>
 						<div className="website _sg-6">
 							<label htmlFor="website">Website</label>
@@ -149,7 +149,7 @@ const CandidateAddForm = React.createClass({
 					<fieldset>
 					<legend>Campaign Details</legend>
 						<div className="party _sg-2">
-							<label htmlFor="party">Party Affiliation</label>
+							<label htmlFor="party">Party</label>
 							<select name="party">
 								<option>D</option>
 								<option>R</option>
@@ -177,10 +177,21 @@ const CandidateAddForm = React.createClass({
 })
 
 const CandidateImportForm = React.createClass({
+	componentDidMount: function() {
+		window.form = this.refs.daForm
+	},
+
+	_importCandidate(e) {
+		e.preventDefault()
+		let file = e.target.file.files
+		Actions.importCandidate(file)
+	},
 	render() {
 		return (
 			<div className="candidate_form_container">
-				<form onSubmit={this._importCandidates}>
+				<form ref="daForm" encType="multipart/form-data" onSubmit={this._importCandidate}>
+					<input name="file" type="file" />
+					<button type="submit" className="submit button sec-but">Import</button>
 				</form>
 			</div>
 		)
@@ -188,3 +199,6 @@ const CandidateImportForm = React.createClass({
 })
 
 export default AddCandidate
+
+
+ // onSubmit={this._importCandidates}

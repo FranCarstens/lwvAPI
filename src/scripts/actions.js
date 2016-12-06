@@ -13,7 +13,10 @@ const Actions = {
 	createUser(user) {
 		User.register(user)
 			.then(
-				(resp) => { console.log('user successfully created', resp) },
+				(resp) => { 
+					console.log('user successfully created', resp)
+					this.authenticateUser(user.email, user.password)
+				},
 				(err) => { console.log('could not create user', err) }
 				)
 		
@@ -59,7 +62,17 @@ const Actions = {
 				})
 			})
 	},
-	// HELP FUNCTIONS
+	// ### IMPORT ACTIONS
+	importCandidate(file) {
+		let formData = new FormData({
+			'file': file
+		})
+		console.log(file)
+		formData.save()
+			.done(resp => console.log('hey, hey!'))
+			.fail(resp => console.log('looks like we\'re the data by hand!'))
+	},
+	// ### HELP FUNCTIONS
 	sanitizePhone(phone) {
 		let no = phone.replace(/[^\d]/g,'')
 		return no.substring(no.length-10)

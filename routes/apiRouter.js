@@ -4,7 +4,7 @@ let helpers = require('../config/helpers.js')
 
 let User = require('../db/schema.js').User
 let Candidate = require('../db/schema.js').Candidate
-
+let fs = require('fs')
 // ### USERS
 
 apiRouter
@@ -13,7 +13,7 @@ apiRouter
 
 // Routes for a Model(resource) should have this structure
 
- // ### CANDIDATES ROUTES
+// ### CANDIDATES ROUTES
 
 apiRouter
 
@@ -74,6 +74,16 @@ apiRouter
 				res.json(req.body)
 			}
 		})
+	})
+
+// ### FILES UPLOAD ROUTES
+
+apiRouter
+	.post('/uploadCSV', function(req,res) {
+		var uploadDir = __dirname + '/uploads'
+		var files = fs.readdirSync(uploadDir)
+		console.log(files)
+		res.status(200).json(files)
 	})
 
 

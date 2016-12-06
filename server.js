@@ -14,6 +14,9 @@ const session = require('express-session');
 const passport = require('passport');
 const renderFile = require('ejs').renderFile
 
+// ### ADDING MULTER P 1
+const multer  = require('multer')
+
 // Load Configuration
 const appMiddleWare = require('./config/middleware.js')
 const appSecrets = require('./config/secrets.js')
@@ -61,6 +64,12 @@ app.use( passport.session() );
 appAuthentication(User)
 app.use( appMiddleWare.cookifyUser )
 app.use( appMiddleWare.parseQuery )
+
+// ### ADDING MULTER P 1
+// app.use(multer({ dest: './uploads/'}))
+
+
+
 // 
 // =========
 // ROUTERS

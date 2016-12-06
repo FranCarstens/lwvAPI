@@ -30,7 +30,7 @@ export const MultiField = React.createClass({
 			<fieldset className={`group_${type}`}>
 				<legend>{label}</legend>
 				{this.state.inputGroup}
-				<button className="icon-add button" onClick={this._addInput}>Add</button>
+				<button className="button" onClick={this._addInput}>Add<i className="icon-plus"></i></button>
 			</fieldset>
 		)
 	}
@@ -61,7 +61,7 @@ export const QuestionField = React.createClass({
 			<fieldset className={`group_${type}`}>
 				<legend>{label}</legend>
 				{this.state.inputGroup}
-				<button className="icon-add button" onClick={this._addInput}>Add</button>
+				<button className="button" onClick={this._addInput}>Add +</button>
 			</fieldset>
 		)
 	}
