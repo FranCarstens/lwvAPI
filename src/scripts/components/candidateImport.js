@@ -38,12 +38,13 @@ const CandidateImportForm = React.createClass({
 			.send(csv)
 			.end(function(err, resp) {
 				if (err) { console.error(err) }
+				else console.log(resp, csv)
 				return resp
 			})
 	},
 	render() {
 		return (
-			<Dropzone disableClick ={true} multiple={false} accept={'text/csv'} onDrop={this._dropHandler}>
+			<Dropzone disableClick ={false} multiple={false} accept={'text/csv'} onDrop={this._dropHandler}>
 				<div> Drop a csv, or click to add. </div>
 			</Dropzone>
 		)
