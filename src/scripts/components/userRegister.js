@@ -2,6 +2,7 @@
 import React from 'react'
 import Store from '../store'
 import Actions from '../actions'
+import User from '../models/userModel'
 
 // ### COMPONENTS & VARIABLES
 
@@ -9,15 +10,18 @@ import Actions from '../actions'
 const UserRegister = React.createClass({
 	_createUser(e) {
 		e.preventDefault()
-		console.log(e.target)
-		let user = {
+		let role = (this.props.userCount > 0) ? 3 : 1,
+			newUser = {
 			username: e.target.username.value,
 			email: e.target.email.value,
-			password: e.target.password.value
+			password: e.target.password.value,
+			roleID: role
 		}
-		Actions.createUser(user)
+		console.log(newUser.roleID)
+		Actions.createUser(newUser)
 	},
 	render() {
+
 		return (
 			<form id="register_form" onSubmit={this._createUser}>
 				<h3>Create Account</h3>
