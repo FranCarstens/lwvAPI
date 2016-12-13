@@ -31,7 +31,7 @@ const Candidates = React.createClass({
 			return (
 				<section className="content favView">
 					<h2>My Pins</h2>
-					{ coll.map((el,index) => <CandidateSummary model={el} />) }
+					{ coll.map((el,index) => <CandidateSummary model={el} view="userpins" />) }
 				</section>
 			)
 		}

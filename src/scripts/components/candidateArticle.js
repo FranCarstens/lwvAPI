@@ -43,7 +43,7 @@ export const Candidate = React.createClass({
 				questions
 			} = model.attributes,
 			ph = this._phoneFormat(phone),
-			candidateID = this.props.model.id
+			candidateID = H.grabRoute(location.hash)			
 		return (
 			<article key={model.cid} className="candidate-view">
 				<header className="clearfix">
@@ -113,12 +113,12 @@ export const Candidate = React.createClass({
 					{this._getObjectArray(questions)}
 				</fieldset>
 				<div>
-					{ ( H.userRole() === 1 )
-						? <button className="delete button sec-but" onClick={this._deleteCandidate}>Delete</button> : '' }
-					{ ( H.userRole() > 0 )
-						? <button className="save button sec-but" onClick={this._saveCandidateFav}>Pin</button> : '' }
-					{ ( H.userRole() > 0 )
-						? <button className="remove button sec-but" onClick={this._removeCandidateFav}>Unpin</button> : '' }
+					{ H.userRole() === 1 &&
+						<button className="delete button sec-but" onClick={this._deleteCandidate}>Delete</button> }
+					{ H.userRole() > 0 && location.hash === '#candidates/' + candidateID && 
+						<button className="save button sec-but" onClick={this._saveCandidateFav}>Pin</button> }
+					{ H.userRole() > 0 && location.hash === '#my-pins/' + candidateID &&
+						<button className="remove button sec-but" onClick={this._removeCandidateFav}>Unpin</button> }
 				</div>
 			</article>
 		)
@@ -134,7 +134,8 @@ export const CandidateSummary = React.createClass({
 				address: {postalCode},
 				partyAffiliation, electionCycle, electionRace
 			} = model.attributes,
-			candidateID = this.props.model.id
+			candidateID = this.props.model.id,
+			view = this.props.view ? '#my-pins' : '#candidates'
 		return(
 			<article key={model.cid} className="candidate-summary">
 				<div>
@@ -143,7 +144,7 @@ export const CandidateSummary = React.createClass({
 				</div>
 				<div>
 					{ (firstName) 
-						? <h3><a href={`#candidates/${candidateID}`} > {firstName} {middleNames} {lastName} </a></h3> : '' }
+						? <h3><a href={`${view}/${candidateID}`} > {firstName} {middleNames} {lastName} </a></h3> : '' }
 					{ (postalCode) 
 						? <span>ZIP: {postalCode}</span> : '' }
 					{ (partyAffiliation) 

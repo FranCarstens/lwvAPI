@@ -35,7 +35,9 @@
 				background-color: white;
 				color: $blue;
 				&:hover {
-					border-color: $blue;
+					color: white;
+					border-color: $red;
+					background-color: $red;
 				}
 			}
 			&:hover {

@@ -26,6 +26,7 @@ const app = function() {
 			'candidates/import': 'handleImport',
 			'candidates/:id' : 'handleCandidate',
 			'my-pins': 'handlePins',
+			'my-pins/:id': 'handlePin',
 			'login' : 'handleLogin',
 			'docs' : 'handleDocs',
 			'styles' : 'handleStyles',
@@ -56,7 +57,10 @@ const app = function() {
 			console.log('handlecandies')
 			ReactDOM.render(<FavListing view="userpins" />, document.querySelector('.body_container'))
 		},
-
+		handlePin(id) {
+			console.log('handlecandy')
+			ReactDOM.render(<CandidateView modelId={id} view="userpins" />, document.querySelector('.body_container'))
+		},
 		handleLogin() {
 			console.log('handlelogin')
 				ReactDOM.render(<Login />, document.querySelector('.body_container'))

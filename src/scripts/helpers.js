@@ -40,6 +40,9 @@ const H = {
 		let no = phone.replace(/[^\d]/g,'')
 		return no.substring(no.length-10)
 	},
+	grabRoute(hash) {
+		return hash.slice(1).split('/')[1]
+	},
 	// ## USER FUNCTIONS
 	getUserId() {
 		if (User.getCurrentUser()) return User.getCurrentUser()._id
