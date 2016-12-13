@@ -4,10 +4,10 @@ var Candidate = require('./db/schema').Candidate
 
 var mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/leagueAPI_dev', function(err,db) {
-	if (err) {console.log(err)}
-	else console.log('connected')
-})
+// mongoose.connect('mongodb://localhost/leagueAPI_dev', function(err,db) {
+// 	if (err) {console.log(err)}
+// 	else console.log('connected')
+// })
 
 const importCsv = function(csvFile) {
 	var stream = fs.createReadStream(csvFile)
