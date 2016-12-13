@@ -14,7 +14,7 @@ const SearchBar = React.createClass({
 	},
 	render() {
 		return (
-			<header><input type="text" onKeyUp={this._searchCandidates} placeholder="" /></header>
+			<input type="text" onKeyUp={this._searchCandidates} placeholder="" />
 		)
 	}
 })

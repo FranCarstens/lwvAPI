@@ -8,7 +8,7 @@ import { Header, Footer } from '../components/pageComponents'
 import Candidates from '../components/candidates'
 
 // ### PRIMARY COMPONENTS
-const CandidatesListing = React.createClass({
+const FavListing = React.createClass({
 	componentWillMount() {
 		Actions.fetchCandidates()
 		Store.on('dataChanged', () => {
@@ -24,18 +24,15 @@ const CandidatesListing = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		let currentColl = this.state.candidates,
-			contentClass = (this.state.searchQ.length !== 0) ? 'loaded' : 'unloaded'
+		let currentColl = this.state.candidateFavs
 		return (
-			<div className={`body_wrapper candidatesListing ${contentClass}`}>
+			<div className="body_wrapper">
 				<Header />
-				<div className="content_wrapper">
-					{ (this.state.candidate.length !== 0) ? <Candidates collection={currentColl} query={this.state.searchQ} /> : <div className="loading"></div> }
-				</div>
+				{ (this.state.candidate.length !== 0) ? <Candidates collection={currentColl} /> : <div className="loading"></div> }
 				<Footer />
 			</div>
 		)
 	}
 })
 
-export default CandidatesListing
+export default FavListing

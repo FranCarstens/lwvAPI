@@ -63,7 +63,12 @@ UserAuthModel.getCurrentUser = function() {
 const User = UserAuthModel.extend({
 	initialize: function(){
 
-	}
+	},
+})
+
+export const UserCollection = Backbone.Collection.extend({
+	model: User,
+	url: '/api/users'
 })
 
 export default User

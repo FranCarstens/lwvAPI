@@ -1,0 +1,31 @@
+.body_wrapper.candidatesListing {
+	.content_wrapper {
+		min-height: 70vh;
+		section.content {
+
+		}
+	}
+	header#search {
+		transition: all 0.3s ease-in-out;
+		text-align: center;
+		input {
+			margin: 0 auto;
+			width: 50%;
+			font-size: 1.5rem;
+			border-radius: 6px;
+			&:active, &:focus, &:hover {
+				border-left: 1px solid rgba($blue, 0.3);
+			}
+		}
+	}
+	&.unloaded {
+		header#search {
+			margin: 10% 0 3rem 0;
+		}
+	}
+	&.loaded {
+		header#search {
+			margin: 0 0 3rem 0;
+		}
+	}
+}

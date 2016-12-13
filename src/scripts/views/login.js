@@ -11,14 +11,24 @@ import UserRegister from '../components/userRegister'
 
 // ### PRIMARY COMPONENTS
 const Login = React.createClass({
+	componentWillMount() {
+		Actions.fetchUser()
+		Store.on('dataChanged', () => {
+			this.setState(
+				Store._getData()
+			)
+		})
+	},
 	render() {
+		// console.log(this.state.users)
+		let userCount = this.state ? this.state.users.length : ''
 		return (
 			<div className="body_wrapper">
 				<Header />
 				<section className="content">
 					<div className="user_forms clearfix">
 						<UserLogin />
-						<UserRegister />
+						<UserRegister userCount={userCount} />
 					</div>
 				</section>
 				<Footer />

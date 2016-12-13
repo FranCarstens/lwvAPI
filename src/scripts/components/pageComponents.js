@@ -11,19 +11,24 @@ export const Header = React.createClass({
 	render() {
 		return (
 			<header id="header">
-				<nav>
-					<ul>
-						<li><a href="#candidates">Candidates</a></li>
-						{ ( H.userRole() === 1 )
-							? <li><a href="#candidates/add">Add</a></li> : '' }
-						{ ( H.userRole() === 1 )
-							? <li><a href="#candidates/import">Import</a></li> : '' }
-						{ ( !H.userRole() > 0 )
-							? <li><a href="#login">Login</a></li> : '' }
-						{ ( H.userRole() > 0 )
-							? <li><a href="#" onClick={Actions.logoutUser}>Logout</a></li> : '' }
-					</ul>
-				</nav>
+				<div className="header_container">
+					<nav>
+						<ul>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#candidates">Candidates</a></li>
+							{ ( H.userRole() > 0 )
+								? <li><a href="#my-pins">My Pins</a></li> : '' }
+							{ ( H.userRole() === 1 )
+								? <li><a href="#candidates/add">Add</a></li> : '' }
+							{ ( H.userRole() === 1 )
+								? <li><a href="#candidates/import">Import</a></li> : '' }
+							{ ( !H.userRole() > 0 )
+								? <li><a href="#login">Login</a></li> : '' }
+							{ ( H.userRole() > 0 )
+								? <li><a href="#" onClick={Actions.logoutUser}>Logout</a></li> : '' }
+						</ul>
+					</nav>
+				</div>
 			</header>
 		)
 	}

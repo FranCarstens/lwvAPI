@@ -1,15 +1,20 @@
 header#header {
 	font-size: 0.75rem;
 	text-transform: uppercase;
-	nav {
+	.header_container {
 		background-color: $shadow;
-		ul {
-			li {
-				display: inline-block;
-				a {
-					line-height: 3rem;
-					padding: 0 1rem;
-					text-align: center;
+		nav {
+			margin: 0 auto;
+			max-width: 1024px;
+			text-align: right;
+			ul {
+				li {
+					display: inline-block;
+					a {
+						line-height: 3rem;
+						padding: 0 1rem;
+						text-align: center;
+					}
 				}
 			}
 		}

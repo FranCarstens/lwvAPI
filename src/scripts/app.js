@@ -10,6 +10,8 @@ import Login from './views/login'
 import CandidatesListing from './views/candidatesListing'
 import CandidateAdd from './views/candidatesAdd'
 import CandidateImport from './views/candidatesImport'
+import CandidateView from './views/candidatesView'
+import FavListing from './views/favListing'
 import StyleGuide from './views/styleguide'
 
 const app = function() {
@@ -23,6 +25,7 @@ const app = function() {
 			'candidates/add' : 'handleAdd',
 			'candidates/import': 'handleImport',
 			'candidates/:id' : 'handleCandidate',
+			'my-pins': 'handlePins',
 			'login' : 'handleLogin',
 			'docs' : 'handleDocs',
 			'styles' : 'handleStyles',
@@ -35,11 +38,11 @@ const app = function() {
 		},
 		handleCandidates() {
 			console.log('handlecandies')
-			ReactDOM.render(<CandidatesListing />, document.querySelector('.body_container'))
+			ReactDOM.render(<CandidatesListing view="allcandidates" />, document.querySelector('.body_container'))
 		},
-		handleCandidate() {
+		handleCandidate(id) {
 			console.log('handlecandy')
-			ReactDOM.render(<CandidateView />, document.querySelector('.body_container'))
+			ReactDOM.render(<CandidateView modelId={id} />, document.querySelector('.body_container'))
 		},
 		handleAdd() {
 			console.log('handleadd')
@@ -49,6 +52,11 @@ const app = function() {
 			console.log('handleimport')
 			ReactDOM.render(<CandidateImport />, document.querySelector('.body_container'))
 		},
+		handlePins() {
+			console.log('handlecandies')
+			ReactDOM.render(<FavListing view="userpins" />, document.querySelector('.body_container'))
+		},
+
 		handleLogin() {
 			console.log('handlelogin')
 				ReactDOM.render(<Login />, document.querySelector('.body_container'))

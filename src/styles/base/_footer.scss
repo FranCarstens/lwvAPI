@@ -1,6 +1,16 @@
 footer#footer {
-	padding: 2rem;
-	background-color: $shadow;
-	font-size: 0.75rem;
-	text-transform: uppercase;
+	margin-top: 3rem;
+	background-color: $blue;
+	font-size: 1rem;
+	.footer_container {
+		padding: 3rem 1rem;
+		margin: 0 auto;
+		max-width: 1024px;
+		color: white;
+		a, a:link, a:visited, a:hover {
+			color: white;
+		}
+		a:hover {
+		}
+	}
 }

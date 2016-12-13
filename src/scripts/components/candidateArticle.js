@@ -38,8 +38,7 @@ export const Candidate = React.createClass({
 			{	
 				firstName, middleNames, lastName, avatar,
 				education, professionalExperience, communityInvolvement, 
-				email, website, phone, facebook, twitter, 
-				address: {streetAddress, locality, region, postalCode}, 
+				email, website, phone, facebook, twitter, address: {streetAddress, locality, region, postalCode}, 
 				partyAffiliation, electionCycle, electionRace, 
 				questions
 			} = model.attributes,
@@ -75,7 +74,7 @@ export const Candidate = React.createClass({
 						  </div>
 						: '' }
 				</fieldset>
-				<fieldset>
+				<fieldset className="contact_details">
 					<h4>Contact Details</h4>
 					{ (ph)
 						? <li><i className="icon-phone"></i>{ph}</li> : '' }
@@ -100,7 +99,7 @@ export const Candidate = React.createClass({
 						  </div>
 						: '' }
 				</fieldset>
-				<fieldset>
+				<fieldset className="campaign_details">
 					<h4>Campaign Details</h4>
 					{ (partyAffiliation)
 						? <li>{partyAffiliation}</li> : '' }
@@ -109,7 +108,7 @@ export const Candidate = React.createClass({
 					{ (electionRace)
 						? <li>{electionRace}</li> : '' }
 				</fieldset>
-				<fieldset>
+				<fieldset className="questions">
 					<h4>Questions</h4>
 					{this._getObjectArray(questions)}
 				</fieldset>

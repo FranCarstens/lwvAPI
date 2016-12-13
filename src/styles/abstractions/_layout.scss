@@ -3,6 +3,21 @@
 	& > * {
 		font-size: 1rem;
 		display: inline-block;
+		float: none;
 		vertical-align: top;
+	}
+}
+@mixin vertAlignTable {
+	display:table;
+	& > div {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+@mixin vertAlignInline {
+	@include inlineBlockContain;
+	& > div {
+		vertical-align: middle;
 	}
 }

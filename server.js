@@ -13,9 +13,15 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const renderFile = require('ejs').renderFile
+const fs = require('fs')
 
 // ### ADDING MULTER P 1
 const multer  = require('multer')
+
+// ### ADDING CSVREAD
+const importCsv = require('./csvRead').importCsv
+
+
 
 // Load Configuration
 const appMiddleWare = require('./config/middleware.js')
@@ -66,9 +72,28 @@ app.use( appMiddleWare.cookifyUser )
 app.use( appMiddleWare.parseQuery )
 
 // ### ADDING MULTER P 1
-var upload = multer({ dest: './upload'});
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './upload')
+  },
+  filename: function (req, file, cb) {
+
+    // cb(null, file.originalname + '-' + Date.now() + '.csv')
+    cb(null, 'candidates-' + Date.now() + '.csv')
+  }
+})
+
+var upload = multer({ storage: storage });
+// var upload = multer({ dest: './upload'});
 app.post('/upload', upload.single('csv'), function(req, res, next){
-  res.end(req.file);
+	var files = fs.readdirSync('./upload')
+	// console.log(files)
+  var dataFile = req.file.path
+  // console.log('YOUR REQUEST',req.file.path)
+  // res.status(200).send('file received');
+  // console.log(importCsv)
+  importCsv(dataFile)
 });
 
 

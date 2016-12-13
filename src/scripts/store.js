@@ -1,14 +1,23 @@
 // ### LIBRARIES & SYSTEM
 import Backbone from 'backbone'
 import _ from 'underscore'
-import {CandidateModel, CandidateCollection} from './models/candidateModels'
+import {
+	CandidateModel, CandidateCollection,
+	CandidateFavModel, CandidateFavCollection
+		} from './models/candidateModels'
+import { UserCollection } from './models/userModel'
 
 // ### COMPONENTS & VARIABLES
 
 // ### PRIMARY COMPONENTS
 const Store = _.extend(Backbone.Events, {
 	_data: {
-		candidates: new CandidateCollection()
+		candidates: new CandidateCollection(),
+		candidate: new CandidateModel(),
+		candidateFavs: new CandidateFavCollection(),
+		candidateFav: new CandidateFavModel(),
+		users: new UserCollection(),
+		searchQ: ''
 	},
 	_getDataProp(Prop) {
 		return this._data[Prop]
@@ -24,7 +33,7 @@ const Store = _.extend(Backbone.Events, {
 		this._emitChange()
 	},
 	_initialize(newData) {
-		// this._getDataProp('').on('update sync', () => this._emitChange())
+		this._getDataProp('candidates').on('update sync', () => this._emitChange())
 	}
 })
 
