@@ -1,10 +1,10 @@
 section.content {
-	padding: 2rem 1rem;
+	padding: 4.5rem 1rem;
 }
 
-@media #{$narrow} {
+@media #{$wide} {
 	section.content {
-		width: 768px;
+		width: 1280px;
 		margin: 0 auto;
 	}
 

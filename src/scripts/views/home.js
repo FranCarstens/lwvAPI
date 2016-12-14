@@ -10,7 +10,7 @@ import { Header, Footer } from '../components/pageComponents'
 const Home = React.createClass({
 	render() {
 		return (
-			<div className="body_wrapper">
+			<div className="body_wrapper page_home">
 				<Header />
 					<section className="hero">
 						<div className="intro">
@@ -33,6 +33,8 @@ const Home = React.createClass({
 								</div>
 							</article>
 						</div>
+					</section>
+					<section>
 						<div className="content_area clearfix">
 							<article>
 								<div className="illustration _sg-4">

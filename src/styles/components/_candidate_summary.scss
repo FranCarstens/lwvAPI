@@ -1,5 +1,59 @@
 .candidate-summary {
-	article {
-		
+	border-bottom: 1px solid rgb(235,235,235);
+	padding: 1.5rem 0;
+	transition: all 0.5s ease-in-out;
+	&:hover {
+		cursor: pointer;
+		background-color: $shadow;
+		transition: all 0.25s ease-in-out;
+	}
+	div.images {
+		position: relative;
+	}
+	div.image {
+		height: 6rem;
+		width: 6rem;
+		background: $outline;
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		img {
+			width: 6rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -50%;
+			margin-top: -60%;
+		}
+	}
+	h4 {
+		margin: 0;
+	}
+	& > div {
+		display: inline-block;
+		float: none;
+		vertical-align: middle;
+	}
+	.can_party {
+		height: 2rem;
+		width: 2rem;
+		color: white;
+		font-weight: 700;
+		text-align: center;
+		line-height: 2rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+	}
+	.zip {
+		text-align: center;
+		font-size: 1.25rem;
+		line-height: 1rem;
+		.icon-location-pin {
+			font-size: 2.5rem;
+		}
 	}
 }
+.can_R { background-color: $red;}
+.can_D { background-color: $blue;}

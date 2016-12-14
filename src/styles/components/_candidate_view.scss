@@ -9,18 +9,35 @@ fieldset {
 	}
 }
 .candidate-view {
+	.campaign_details {
+		font-size: 1.7rem;
+		margin-bottom: 2rem;
+		span {
+			display: inline-block;
+		}
+		.can_party {
+			color: white;
+			font-weight: 700;
+			width: 2.75rem;
+			height: 2.75rem;
+			line-height: 2.75rem;
+			text-align: center;
+			border-radius: 50%;
+			margin-right: 1rem;
+		}
+	}
 	header {
 		padding: 1rem 0;
 		img {
-			height: 6rem;
 			width: 6rem;
-			background: $outline;
-			border-radius: 50%;
 		}
 		h3, img {
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: top;
 			margin-right: 1rem;
+		}
+		h3 {
+			font-weight: 300;
 		}
 	}
 	fieldset.questions {
@@ -32,18 +49,5 @@ fieldset {
 			width: 2rem;
 			margin-left: -2rem;
 		}
-	}
-}
-
-.candidate-summary {
-	img {
-		height: 6rem;
-		width: 6rem;
-		background: $outline;
-		border-radius: 50%;
-	}
-	div {
-		display:inline-block;
-		padding: 1rem 1rem 1rem 0;
 	}
 }

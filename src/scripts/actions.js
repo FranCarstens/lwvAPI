@@ -79,11 +79,8 @@ const Actions = {
 				Store._setData({
 					candidates: candiColl
 				})
-			})
-		console.log('starting favs')
+			})		
 		let favColl = new CandidateFavCollection()
-		console.log('more fav stuff')
-		console.log(H.getUserId())
 		favColl.fetch({
 			data: {
 				userID: H.getUserId()
@@ -97,10 +94,10 @@ const Actions = {
 			console.log('end fav stuff')
 	},
 	fetchCandidate(id) {
-		console.log('id in actions', id)
-		let candidate = new CandidateModel({
-			_id: id
-		})
+		if (H.grabRoute(location.hash,0) === 'candidates') {
+				var candidate = new CandidateModel({ _id: id })
+			}
+			else { var candidate = new CandidateFavModel({ _id: id }) }
 		candidate.fetch()
 			.then( () => {
 				Store._setData({
@@ -115,6 +112,7 @@ const Actions = {
 			.done((resp) => console.log('post successfully deleted', resp))
 			.fail((resp) => console.log('delete failed', resp))
 		Store._emitChange()
+		location.hash = 'candidates'
 	},	
 	// ### IMPORT ACTIONS
 	importCandidate(file) {
@@ -133,23 +131,25 @@ const Actions = {
 	},
 	saveCandidateFav(model) {
 		let candidateFav = new CandidateFavModel(model)
-		candidateFav.set({
+		candidateFav.unset('_id').set({
 			userID: User.getCurrentUser()._id
-		}).unset('_id')
+		})
 		candidateFav.save()
 			.done(resp => {
 				console.log('Success',resp)
-				location.hash="my-pins"
+				location.hash='my-pins'
 				})
 			.fail(resp => console.log('Fail',resp))
 	},
 	removeCandidateFav(cid) {
+		console.log(Store._data)
 		let coll = Store._getDataProp('candidateFaves')
 		let mod = coll.get(cid)
 		mod.destroy()
 			.done(resp => console.log('fav unpinned', resp))
 			.fail(resp => console.log('unpinning failed', resp))
 		Store._emitChange()
+		location.hash = 'my-pins'
 	},
 	// ### CANDIDATE SEARCH
 	refineModels(coll,query) {

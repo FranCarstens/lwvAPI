@@ -58,7 +58,7 @@ const app = function() {
 			ReactDOM.render(<FavListing view="userpins" />, document.querySelector('.body_container'))
 		},
 		handlePin(id) {
-			console.log('handlecandy')
+			console.log('handlepin')
 			ReactDOM.render(<CandidateView modelId={id} view="userpins" />, document.querySelector('.body_container'))
 		},
 		handleLogin() {

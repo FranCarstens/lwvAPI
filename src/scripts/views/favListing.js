@@ -25,6 +25,7 @@ const FavListing = React.createClass({
 	},
 	render() {
 		let currentColl = this.state.candidateFavs
+		console.log('thestore', Store._data, 'thestate', this.state, 'currentcoll', currentColl)
 		return (
 			<div className="body_wrapper">
 				<Header />

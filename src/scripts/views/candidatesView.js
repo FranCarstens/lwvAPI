@@ -2,6 +2,7 @@
 import React from 'react'
 import Store from '../store'
 import Actions from '../actions'
+import H from '../helpers'
 
 // ### COMPONENTS & VARIABLES
 import { Header, Footer } from '../components/pageComponents'
@@ -11,7 +12,8 @@ import { Candidate } from '../components/candidateArticle'
 // ### PRIMARY COMPONENTS
 const CandidateView = React.createClass({
 	componentWillMount() {
-		Actions.fetchCandidate(this.props.modelId)
+		let candidateID = H.grabRoute(location.hash,1)
+		Actions.fetchCandidate(candidateID)
 		Store.on('dataChanged', () => {
 			this.setState(
 				Store._getData()
@@ -25,6 +27,8 @@ const CandidateView = React.createClass({
 		return Store._getData()
 	},
 	render() {
+		console.log('the candidate', this.state.candidate)
+		console.log('the candidate store', Store._data.candidate)
 		return (
 			<div className="body_wrapper">
 				<Header />

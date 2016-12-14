@@ -1,59 +1,64 @@
-.hero {
-	height: 70vh;
-	background-image: url('../images/hero.jpg');
-	background-size: cover;
-	background-position: fixed;
-	background-attachment: fixed;
-	.intro {
-		display: table;
-		div {
-			display: table-cell;
-			vertical-align: middle;	
-			padding: 0 5% 0 35%;
-		}
-		color: white;
-		max-width: 1024px;
-		margin: 0 auto;
+.page_home {
+	.hero {
 		height: 70vh;
-		h1 {
-			font-weight: 100;
-			font-size: 4rem;
-		}
-		p {
-			font-weight: 100;
-			font-size: 1.75rem;
-		}
-		a.button {
-			font-size: 1rem;
-			height: 3rem;
-			line-height: 3rem;
-			font-weight: 300;
-			display: inline-block;
-			margin: 0.5rem;
-			&:not(.drk-but) {
-				border-color: white;
-				background-color: white;
-				color: $blue;
+		background-image: url('../images/hero.jpg');
+		background-size: cover;
+		background-position: fixed;
+		background-attachment: fixed;
+		.intro {
+			display: table;
+			div {
+				display: table-cell;
+				vertical-align: middle;	
+				padding: 0 5% 0 35%;
+			}
+			color: white;
+			max-width: 1024px;
+			margin: 0 auto;
+			height: 70vh;
+			h1 {
+				font-weight: 100;
+				font-size: 4rem;
+			}
+			p {
+				font-weight: 100;
+				font-size: 1.75rem;
+			}
+			a.button {
+				font-size: 1rem;
+				height: 3rem;
+				line-height: 3rem;
+				font-weight: 300;
+				display: inline-block;
+				margin: 0.5rem;
+				&:not(.drk-but) {
+					border-color: white;
+					background-color: white;
+					color: $blue;
+					&:hover {
+						color: white;
+						border-color: $red;
+						background-color: $red;
+					}
+				}
 				&:hover {
-					color: white;
-					border-color: $red;
-					background-color: $red;
+					box-shadow: 0 10px 10px -10px rgba(0,0,0,0.5);
 				}
 			}
-			&:hover {
-				box-shadow: 0 10px 10px -10px rgba(0,0,0,0.5);
-			}
 		}
 	}
-}
-section div.content_area {
-	& > article {
-		@include vertAlignInline;
-	}
-	padding: 3rem 1rem;
-	margin: 0 auto;
-	max-width: 1024px;
-	div.illustration {
-		padding: 0 4rem;
+	section {
+		border-bottom: 1px solid $outline;
+		div.content_area {
+			& > article {
+				@include vertAlignInline;
+			}
+			padding: 4.5rem 1rem;
+			margin: 0 auto;
+			max-width: 1024px;
+			div.illustration {
+				padding: 0 4rem;
+			}
+		}
 	}
 }
