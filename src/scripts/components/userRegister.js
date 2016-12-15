@@ -23,7 +23,7 @@ const UserRegister = React.createClass({
 	render() {
 
 		return (
-			<form id="register_form" onSubmit={this._createUser}>
+			<form id="register_form" onSubmit={this._createUser} className="_sg-6">
 				<h3>Create Account</h3>
 				<p></p>
 				<div className="username">

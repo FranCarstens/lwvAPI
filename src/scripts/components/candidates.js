@@ -20,7 +20,7 @@ const Candidates = React.createClass({
 				<section className="content searchView">
 					<header id="search">
 						<h2>Search Candidates</h2>
-						<p>Search for candidates by name, zipcode or electoral race.</p>
+						<p>Search for candidates by name, state, zipcode or electoral race.</p>
 						<SearchBar />
 					</header>
 					{ this._refineModels(coll) }

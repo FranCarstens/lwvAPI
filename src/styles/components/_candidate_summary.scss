@@ -16,14 +16,14 @@
 			position: relative;
 		}
 		div.image {
-			height: 6rem;
-			width: 6rem;
+			height: 4.5rem;
+			width: 4.5rem;
 			background: $outline;
 			border-radius: 50%;
 			overflow: hidden;
 			position: relative;
 			img {
-				width: 6rem;
+				width: 4.5rem;
 				position: absolute;
 				top: 50%;
 				left: 50%;
@@ -51,6 +51,9 @@
 			left: 0;
 			border-radius: 50%;
 		}
+		.e_cycle, .e_race {
+			display: block;
+		}
 		.zip {
 			text-align: center;
 			font-size: 1.25rem;
@@ -62,7 +65,29 @@
 	}
 	.can_R { background-color: $red;}
 	.can_D { background-color: $blue;}
+	.can_G { background-color: $green;}
+	.can_L { background-color: $yellow;}
 
+	@media #{$tablet} {
+		.candidate-summary {
+			div.image {
+				height: 6rem;
+				width: 6rem;
+				img {
+					width: 6rem;
+				}
+			}
+			.e_cycle, .e_race {
+				display: inline;
+			}
+			.e_cycle {
+				padding: 0 1rem 0 0;
+				margin: 0 1rem 0 0;
+				border: none;
+				border-right: 2px solid #ccc;
+			}
+		}
+	}
 	@media #{$wide} {
 		section.content {
 			max-width: 768px;

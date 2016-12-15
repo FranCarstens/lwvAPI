@@ -1,15 +1,52 @@
 footer#footer {
+	text-align: center;
 	background-color: $blue;
 	font-size: 1rem;
 	.footer_container {
-		padding: 3rem 1rem;
+		padding: 3rem 0;
 		margin: 0 auto;
 		max-width: 1024px;
 		color: white;
+		nav {
+			a {
+				padding: 0 1rem;
+				height: 3rem;
+				line-height: 3rem;
+				display: block;
+			}
+			a:hover {
+				background-color: darken($blue, 2);
+			}
+		}
 		a, a:link, a:visited, a:hover {
 			color: white;
 		}
-		a:hover {
+	}
+	.footer_license {
+		font-size: 0.83rem;
+		padding: 4rem 2rem 0;
+		text-align: center;
+		clear:both;
+	}
+}
+@media #{$tablet} {
+	footer#footer {
+		text-align: left;
+		.footer_container {
+			padding: 3rem 4.5rem;
+			nav {
+				a {
+					padding: 0;
+					height: 2rem;
+					line-height: 2rem;
+					&:hover {
+						padding: 0 0.5rem;
+					}
+				}
+			}
+		}
+		.footer_license {
+			padding: 4rem 0 0;
 		}
 	}
 }

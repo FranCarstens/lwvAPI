@@ -1,5 +1,22 @@
-#login_form, #register_form {
-	padding: 2rem;
-	width: 50%;
-	float: right;
+#login_form, #register_form{
+	text-align: center;
+	input {
+		margin: 0 auto 1.7rem;
+		width: 100%;
+	}
+	.form_actions {
+		text-align: center;
+	}
+}
+@media #{$tablet} {
+	#login_form, #register_form { 
+		text-align: left;
+		input {
+			margin: 0 0 1.7rem;
+			width: 66%;
+		}
+		.form_actions {
+			text-align: left;
+		}
+	}
 }

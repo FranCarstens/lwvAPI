@@ -8,10 +8,12 @@ fieldset {
 		}
 	}
 }
+
 .candidate-view {
 	.campaign_details {
 		font-size: 1.7rem;
 		margin-bottom: 2rem;
+		text-align: center;
 		span {
 			display: inline-block;
 		}
@@ -27,27 +29,43 @@ fieldset {
 		}
 		.can_R { background-color: $red;}
 		.can_D { background-color: $blue;}
+		.can_G { background-color: $green;}
+		.can_L { background-color: $yellow;}
+	}
+	.e_cycle {
+		padding: 0 0 1rem;
+		margin: 0 0 1rem;
+		border-bottom: 2px solid #ccc;
 	}
 	.identity_card {
 		padding-bottom: 3rem;
 		margin-bottom: 3rem;
-		border-bottom: 1px solid $outline;
+		border-bottom: 1px solid $lgrey;
 		& > div {
 			padding: 1rem 0;
+			// display: inline-block;
+			// vertical-align: top;
+			// float: none;
 		}
 	}
 	.identity {
+		text-align: center;
 		img {
 			width: 6rem;
+			border-radius: 5px;
+			box-shadow: 0 20px 15px -20px black;
+			margin-bottom: 1rem;
 		}
-		h3, img {
-			display: inline-block;
-			vertical-align: top;
-			margin-right: 1rem;
-		}
+		// h3, img {
+		// 	margin-right: 1rem;
+		// }
 		h3 {
 			font-weight: 300;
+			margin: 0;
 		}
+	}
+	.contact_analog, .contact_digital {
+		clear: both;
 	}
 	.vcard {
 		.address, .icon-location-pin {
@@ -60,7 +78,7 @@ fieldset {
 			padding-top: 1.5rem;
 		}
 		h4 {
-			text-align: right;
+			text-align: left;
 			@include icon
 		}
 		ul {
@@ -95,11 +113,100 @@ fieldset {
 	}
 	.user_actions {
 		text-align: right;
-		.save { 
-			&:after {
-				content: '\e90a';
-				font-family: 'icomoon';
+		span {
+			font-weight: 400;
+			cursor: pointer;
+			margin-left: 2rem;
+			height: 2rem;
+			display: inline-block;
+			border-radius: 1rem;
+			padding-left: 1rem;
+			i {
+				color: white;
+				width: 2rem;
+				height: 2rem;
+				line-height: 2rem;
+				text-align: center;
+				border-radius: 50%;
+				margin-left: 1rem;
+			}
+			&.delete {
+				color: $textred;
+				i {
+					background-color: $red;
+				}
+				&:hover {
+					color: lighten($textred, 10);
+					background-color: lighten($red, 48);
+					i {
+						background-color: lighten($red, 10);
+					}
+				}
+			}
+			&.save, &.remove {
+				color: $textblue;
+				i {
+					background-color: $blue;
+				}
+				&:hover {
+					color: lighten($textblue, 10);
+					background-color: lighten($blue, 65);
+					i {
+						background-color: lighten($blue, 10);
+					}
+				}
+			}
+		}		
+	}
+}
+@media #{$tablet} {
+	.candidate-view {
+		.campaign_details {
+			text-align: left;
+		}
+		.identity {
+			text-align: left;
+		}
+		.e_cycle {
+			padding: 0 1rem 0 0;
+			margin: 0 1rem 0 0;
+			border: none;
+			border-right: 2px solid #ccc;
+		}
+	}
+}
+@media #{$narrow} {
+	.candidate-view {
+		.bio_info, .questions_container {
+			h4 {
+				text-align: right;
 			}
 		}
 	}
 }
+@media #{$normal} {
+	.candidate-view {
+		.contact_analog, .contact_digital {
+			clear: none;
+		}
+		.identity_card {
+			& > div {
+			
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

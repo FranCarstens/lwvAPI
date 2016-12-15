@@ -27,7 +27,7 @@ const FavListing = React.createClass({
 		let currentColl = this.state.candidateFavs
 		console.log('thestore', Store._data, 'thestate', this.state, 'currentcoll', currentColl)
 		return (
-			<div className="body_wrapper">
+			<div className="body_wrapper candidatesListing">
 				<Header />
 				{ (this.state.candidate.length !== 0) ? <Candidates collection={currentColl} /> : <div className="loading"></div> }
 				<Footer />

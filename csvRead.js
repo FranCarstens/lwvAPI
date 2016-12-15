@@ -96,7 +96,7 @@ const formatIncomingData = function(data) {
 		'partyAffiliation': data.partyAffiliation,
 		'electionCycle': data.electionCycle,
 		'electionRace': data.electionRace,
-		'questions': populateQArray('question','answer') // possible another method
+		'questions': populateQArray('question','answer')
 	}
 	return newData
 }

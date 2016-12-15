@@ -38,20 +38,31 @@ export const Footer = React.createClass({
 	render() {
 		return (
 			<footer id="footer">
-				<div className="footer_container">
-				<div className="">
-
-				</div>
-				<div className="">
-					<h4>League of Women's Voters</h4>
-					<ul>
-						<li><a href="http://lwv.org/">LWV of the US</a></li>
-						<li><a href="http://lwvhouston.org/">LWV of Texas</a></li>
-						<li><a href="http://www.lwvtexas.org/">LWV of Houston</a></li>
-						<li><a href="http://lwv.org/get-involved/local-leagues">Local Leagues</a></li>
-					</ul>
-				</div>
-				<p>a footer wanders alone.</p>
+				<div className="footer_container clearfix">
+					<div className="_sg-12 _nr_sg-4 _nl_sg-6">
+						<p>League Logo</p>
+					</div>
+					<nav className="_sg-6 _nr_sg-4 _nl_sg-3">
+						<h4>The League</h4>
+						<ul>
+							<li><a href="http://www.vote411.org">Vote411</a></li>
+							<li><a href="http://lwv.org/">LWV of the US</a></li>
+							<li><a href="http://lwvhouston.org/">LWV of Texas</a></li>
+							<li><a href="http://www.lwvtexas.org/">LWV of Houston</a></li>
+							<li><a href="http://lwv.org/get-involved/local-leagues">Local Leagues</a></li>
+						</ul>
+					</nav>
+					<nav className="_sg-6 _nr_sg-4 _nl_sg-3">
+						<h4>Open Data</h4>
+						<ul>
+							<li><a href="http://sunlightfoundation.com/api/">Sunlight Foundation API</a></li>
+							<li><a href="http://sunlightfoundation.com/opendataguidelines/">Open Data Guidelines</a></li>
+							<li><a href="https://www.govtrack.us/">GovTrack</a></li>
+							<li><a href="https://www.govtrack.us/congress/bills/114/s2852">Open Government Data Act</a></li>
+							<li><a href="http://januaryadvisors.com">January Advisors</a></li>
+						</ul>
+					</nav>
+					<p className="footer_license">Licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>, unless otherwise noted. | Made at The Iron Yard, Houston | Find us on Github</p>
 				</div>
 			</footer>
 		)

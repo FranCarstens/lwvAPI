@@ -154,11 +154,13 @@ const Actions = {
 	refineModels(coll,query) {
 		return coll.filter((el) => {
 			let name = el.get('fullName').toLowerCase(),
-				location = el.get('address').postalCode.toLowerCase(),	
+				location = el.get('address').postalCode.toLowerCase(),
+				region = el.get('address').region.toLowerCase(),	
 				race = el.get('electionRace').toLowerCase()
 			if (	( 
 					name.indexOf(query) !== -1 ||
 					location.indexOf(query) !== -1 ||
+					region.indexOf(query) !== -1 ||
 					race.indexOf(query) !== -1
 					) 
 					&& query.length !== 0

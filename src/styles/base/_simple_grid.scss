@@ -1,22 +1,72 @@
-[class^="_sg-"], [class*=" _sg-"] {
+[class^="_sg-"], [class*="_sg-"] {
 	@media #{$tablet} {
 		float:left;
 		padding: 0 0.5rem;
+		clear: none;
 	}
 }
-._sg-1 	{ @media #{$tablet} {width: (100%/12) } }
-._sg-2 	{ @media #{$tablet} {width: (100%/6) } }
-._sg-3 	{ @media #{$tablet} {width: (100%/4) } }
-._sg-4 	{ @media #{$tablet} {width: (100%/3) } }
-._sg-5 	{ @media #{$tablet} {width: (100%/12*5) } }
-._sg-6 	{ @media #{$tablet} {width: (100%/2) } }
-._sg-8 	{ @media #{$tablet} {width: (100%/12*8) } }
-._sg-9 	{ @media #{$tablet} {width: (100%/12*9) } }
-._sg-12 { @media #{$tablet} {width: (100%/1); clear: both; } }
+
+// Phone
+._ph_sg-1 	{ @media #{$phone} {width: (100%/12)} }
+._ph_sg-2 	{ @media #{$phone} {width: (100%/6)} }
+._ph_sg-3 	{ @media #{$phone} {width: (100%/4)} }
+._ph_sg-4 	{ @media #{$phone} {width: (100%/3)} }
+._ph_sg-5 	{ @media #{$phone} {width: (100%/12*5)} }
+._ph_sg-6 	{ @media #{$phone} {width: (100%/2)} }
+._ph_sg-8 	{ @media #{$phone} {width: (100%/12*8)} }
+._ph_sg-9 	{ @media #{$phone} {width: (100%/12*9)} }
+._ph_sg-12 	{ @media #{$phone} {width: (100%/1)} }
+
+// Tablet
+._sg-1 	{ @media #{$tablet} {width: (100%/12)} }
+._sg-2 	{ @media #{$tablet} {width: (100%/6)} }
+._sg-3 	{ @media #{$tablet} {width: (100%/4)} }
+._sg-4 	{ @media #{$tablet} {width: (100%/3)} }
+._sg-5 	{ @media #{$tablet} {width: (100%/12*5)} }
+._sg-6 	{ @media #{$tablet} {width: (100%/2)} }
+._sg-8 	{ @media #{$tablet} {width: (100%/12*8)} }
+._sg-9 	{ @media #{$tablet} {width: (100%/12*9)} }
+._sg-12 { @media #{$tablet} {width: (100%/1)} }
+
+// Narrow
+._nr_sg-1 	{ @media #{$narrow} {width: (100%/12)} }
+._nr_sg-2 	{ @media #{$narrow} {width: (100%/6)} }
+._nr_sg-3 	{ @media #{$narrow} {width: (100%/4)} }
+._nr_sg-4 	{ @media #{$narrow} {width: (100%/3)} }
+._nr_sg-5 	{ @media #{$narrow} {width: (100%/12*5)} }
+._nr_sg-6 	{ @media #{$narrow} {width: (100%/2)} }
+._nr_sg-8 	{ @media #{$narrow} {width: (100%/12*8)} }
+._nr_sg-9 	{ @media #{$narrow} {width: (100%/12*9)} }
+._nr_sg-12 	{ @media #{$narrow} {width: (100%/1)} }
+
+// Normal
+._nl_sg-1 	{ @media #{$normal} {width: (100%/12)} }
+._nl_sg-2 	{ @media #{$normal} {width: (100%/6)} }
+._nl_sg-3 	{ @media #{$normal} {width: (100%/4)} }
+._nl_sg-4 	{ @media #{$normal} {width: (100%/3)} }
+._nl_sg-5 	{ @media #{$normal} {width: (100%/12*5)} }
+._nl_sg-6 	{ @media #{$normal} {width: (100%/2)} }
+._nl_sg-8 	{ @media #{$normal} {width: (100%/12*8)} }
+._nl_sg-9 	{ @media #{$normal} {width: (100%/12*9)} }
+._nl_sg-12 	{ @media #{$normal} {width: (100%/1)} }
+
+// Wide
+.w_sg-1 	{ @media #{$wide} {width: (100%/12)} }
+.w_sg-2 	{ @media #{$wide} {width: (100%/6)} }
+.w_sg-3 	{ @media #{$wide} {width: (100%/4)} }
+.w_sg-4 	{ @media #{$wide} {width: (100%/3)} }
+.w_sg-5 	{ @media #{$wide} {width: (100%/12*5)} }
+.w_sg-6 	{ @media #{$wide} {width: (100%/2)} }
+.w_sg-8 	{ @media #{$wide} {width: (100%/12*8)} }
+.w_sg-9 	{ @media #{$wide} {width: (100%/12*9)} }
+.w_sg-12 	{ @media #{$wide} {width: (100%/1)} }
 
 ._cl {
 	clear: left;
 }
 ._cr {
 	clear: right;
+}
+._cb {
+	clear: both;
 }

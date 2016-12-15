@@ -2,10 +2,21 @@ section.content {
 	padding: 4.5rem 1rem;
 }
 
+@media #{$tablet} {
+	section.content {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+@media #{$narrow} {
+	section.content {
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+}
 @media #{$wide} {
 	section.content {
-		width: 1280px;
-		margin: 0 auto;
+		
 	}
 
 }

@@ -27,8 +27,8 @@ const Login = React.createClass({
 				<Header />
 				<section className="content">
 					<div className="user_forms clearfix">
-						<UserLogin />
 						<UserRegister userCount={userCount} />
+						<UserLogin />
 					</div>
 				</section>
 				<Footer />

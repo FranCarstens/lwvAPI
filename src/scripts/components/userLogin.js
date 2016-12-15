@@ -15,7 +15,7 @@ const UserLogin = React.createClass({
 	},
 	render() {
 		return (
-			<form id="login_form" onSubmit={this._authenticateUser}>
+			<form id="login_form" onSubmit={this._authenticateUser} className="_sg-6">
 				<h3>Login</h3>
 				<p>Welcome back.</p>
 				<div className="user_email">
