@@ -26,6 +26,7 @@ const CandidatesListing = React.createClass({
 	render() {
 		let currentColl = this.state.candidates,
 			contentClass = (this.state.searchQ.length !== 0) ? 'loaded' : 'unloaded'
+		console.log('current state',this.state)
 		return (
 			<div className={`body_wrapper candidatesListing ${contentClass}`}>
 				<Header />

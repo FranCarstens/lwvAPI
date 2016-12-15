@@ -50,6 +50,12 @@
 	}
 	section {
 		border-bottom: 1px solid $outline;
+		h2 {
+			color: $textblue;
+			font-size: 2.5rem;
+			font-weight: 300;
+			line-height: 3.4rem;
+		}
 		div.content_area {
 			& > article {
 				@include vertAlignInline;
@@ -61,6 +67,19 @@
 				padding: 0 4rem;
 			}
 		}
+	}
+	section.intro {
+		overflow-x: hidden;
+		.illustration {
+			img {
+				width: 1440px;
+				max-width: 1000%;
+			}
+		}
+	}
+	section.contrib {
+		background-color: $lgrey;
+		border-bottom: none;
 	}
 	@media #{$tablet} {
 		.hero {

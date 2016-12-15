@@ -7,6 +7,9 @@
 	clear: both;
 	visibility:hidden;
 }
+img {
+	@include $loading;
+}
 section.content {
 	padding: 2rem;
 }

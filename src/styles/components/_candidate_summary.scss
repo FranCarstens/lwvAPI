@@ -18,7 +18,7 @@
 		div.image {
 			height: 4.5rem;
 			width: 4.5rem;
-			background: $outline;
+			@include $loading;
 			border-radius: 50%;
 			overflow: hidden;
 			position: relative;

@@ -21,3 +21,7 @@
 		vertical-align: middle;
 	}
 }
+
+@mixin loading {
+	background: url('../images/loading_icon.gif') 50% 50% $outline no-repeat;
+}
