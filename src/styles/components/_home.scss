@@ -67,6 +67,28 @@
 			height: 80vh;
 			.intro {
 				div {
+					padding: 0 10% 0 10%;
+				}
+				height: 80vh;
+			}
+		}
+	}
+	@media #{$narrow} {
+		.hero {
+			height: 80vh;
+			.intro {
+				div {
+					padding: 0 5% 0 30%;
+				}
+				height: 80vh;
+			}
+		}
+	}
+	@media #{$normal} {
+		.hero {
+			height: 80vh;
+			.intro {
+				div {
 					padding: 0 5% 0 35%;
 				}
 				height: 80vh;
