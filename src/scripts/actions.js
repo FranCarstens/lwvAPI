@@ -39,7 +39,6 @@ const Actions = {
 				},
 				(err) => { console.log('could not create user', err) }
 				)
-		
 	},
 	authenticateUser(email, password) {
 		User.login(email, password)

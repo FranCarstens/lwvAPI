@@ -54,67 +54,73 @@ export const Candidate = React.createClass({
 						{ (electionRace) && <span className="e_race">{electionRace}</span> }
 					</div>
 				</header>
-				<section>
-					<div>
+				<section className="clearfix identity_card">
+					<div className="identity contact_details _sg-4">
 						{ (avatar) && <img src={avatar} /> }
 						{ (firstName) && <h3><a href={`#candidates/${candidateID}`} > {firstName} {middleNames} {lastName} </a></h3> }
 					</div>
-
-					<div className="contact_details _sc-4">
-						<h4>Contact Details</h4>
-						{ (ph) && <li><i className="icon-phone"></i>{ph}</li> }
-						{ (email) && <li><i className="icon-mail"></i>{email}</li> }
+					<div className="contact_details _sg-4">
+						<ul>
+							{ (ph) && <li><i className="icon-phone"></i>{ph}</li> }
+							{ (email) && <li><i className="icon-mail"></i>{email}</li> }
+						</ul>
+						<br />
 						{ (streetAddress) && 
 							<div className="vcard">
 								<i className="icon-location-pin"></i>
-								<span className="fn org">{firstName + ' ' + lastName} </span><br />
-								<span className="adr">
-									<span className="street-address">{streetAddress} </span><br />
-									<span className="locality">{locality}, </span> 
-									<span className="region">{region} </span>
-									<span className="postal-code">{postalCode}</span>
-								</span>
+								<div className="address">
+									<span className="fn org">{firstName + ' ' + lastName} </span><br />
+									<span className="adr">
+										<span className="street-address">{streetAddress} </span><br />
+										<span className="locality">{locality}, </span> 
+										<span className="region">{region} </span>
+										<span className="postal-code">{postalCode}</span>
+									</span>
+								</div>
 							</div>
 						}
-
-
-						{ (website) && <li><i className="icon-compass"></i>{website}</li> }
-						{ (facebook) && <li><i className="icon-facebook"></i>{facebook}</li> }
-						{ (twitter) && <li><i className="icon-twitter"></i>{twitter}</li> }
-
 					</div>
-				<section>
+					<div className="contact_details _sg-4">
+						<ul>
+							{ (website) && <li><i className="icon-compass"></i>{website}</li> }
+							{ (facebook) && <li><i className="icon-facebook"></i>{facebook}</li> }
+							{ (twitter) && <li><i className="icon-twitter"></i>{twitter}</li> }
+						</ul>
+					</div>
+				</section>
 
 
 
 
-				<fieldset className="clearfix">
+				<section className="bio_info">
 					{ (education[0]) &&
-						<div className="_sg-4">
-							<h4>Education</h4>
-							<ul>{this._getArray(education)}</ul>
+						<div className="clearfix">
+							<h4 className="_sg-4">Education</h4>
+							<ul className="_sg-8">{this._getArray(education)}</ul>
 						</div>
 					}
 					{ (professionalExperience[0]) &&
-						<div className="_sg-4">
-							<h4>Professional Experience</h4>
-							<ul>{this._getArray(professionalExperience)}</ul>
+						<div className="clearfix">
+							<h4 className="_sg-4">Professional Experience</h4>
+							<ul className="_sg-8">{this._getArray(professionalExperience)}</ul>
 						</div>
 					}
 					{ (communityInvolvement[0]) &&
-						<div className="_sg-4">
-							<h4>Community Involvement</h4>
-							<ul>{this._getArray(communityInvolvement)}</ul>
+						<div className="clearfix">
+							<h4 className="_sg-4">Community Involvement</h4>
+							<ul className="_sg-8">{this._getArray(communityInvolvement)}</ul>
 						</div>
 					}
-				</fieldset>
+				</section>
 				
 				
-				<fieldset className="questions">
-					<h4>Questions</h4>
-					{this._getObjectArray(questions)}
-				</fieldset>
-				<div>
+				<section className="questions_container clearfix">
+					<div>
+						<h4 className="_sg-4">Questions</h4>
+						<div className="questions _sg-8">{this._getObjectArray(questions)}</div>
+					</div>
+				</section>
+				<div className="user_actions">
 					{ H.userRole() === 1 &&
 						<button className="delete button sec-but" onClick={this._deleteCandidate}>Delete</button> }
 					{ H.userRole() > 0 && location.hash === '#candidates/' + candidateID && 
