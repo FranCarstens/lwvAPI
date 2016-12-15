@@ -1,6 +1,6 @@
 .page_home {
 	.hero {
-		height: 70vh;
+		height: 95vh;
 		background-image: url('../images/hero.jpg');
 		background-size: cover;
 		background-position: fixed;
@@ -10,15 +10,16 @@
 			div {
 				display: table-cell;
 				vertical-align: middle;	
-				padding: 0 5% 0 35%;
+				padding: 0 2rem;;
 			}
 			color: white;
 			max-width: 1024px;
 			margin: 0 auto;
-			height: 70vh;
+			height: 95vh;
 			h1 {
 				font-weight: 100;
 				font-size: 4rem;
+				line-height: 3.4rem;
 			}
 			p {
 				font-weight: 100;
@@ -58,6 +59,17 @@
 			max-width: 1024px;
 			div.illustration {
 				padding: 0 4rem;
+			}
+		}
+	}
+	@media #{$tablet} {
+		.hero {
+			height: 80vh;
+			.intro {
+				div {
+					padding: 0 5% 0 35%;
+				}
+				height: 80vh;
 			}
 		}
 	}
