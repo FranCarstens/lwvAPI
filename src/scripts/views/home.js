@@ -40,14 +40,14 @@ const Home = React.createClass({
 					<section className="intro">
 						<div className="content_area clearfix">
 							<article>
-								<div className="intro _sg-6">
+								<div className="intro _nl_sg-6">
 									<h2>The League of Women Voter's "Voter's Guides"</h2>
 									<p>Voters guides list candidates in contested races on state and national election ballots and provides their answers to policy questions posed by the League of Women Voters.</p>
 									<p>The LWV Voters Guide API provides access to a JSON API, through which web and mobile app developers can pull data to, for example, enter an address and review races and ballot initiatives specific to that address.</p>
 									<p>Voters guides are funded and published by the League of Women Voters Education Fund; a 501(c)(3) charitable trust, dedicated to encouraging informed and active participation in government.</p>
 									<p>The League of Women Voters never endorses or opposes any candidate or political party. Questionnaires are sent to candidates in races that are contested. Candidate replies are reproduced exactly as submitted, without editing or verification.</p>
 								</div>
-								<div className="illustration _sg-6">
+								<div className="illustration _nl_sg-6">
 									<img src="../images/mockup.jpg" />
 								</div>
 							</article>

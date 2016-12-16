@@ -12,7 +12,9 @@ export const Header = React.createClass({
 		return (
 			<header id="header">
 				<div className="header_container">
+
 					<nav>
+						<div className="logo"><img src="../images/logo.png" /></div>
 						<ul>
 							<li><a href="#home">Home</a></li>
 							<li><a href="#candidates">Search</a></li>
@@ -39,8 +41,8 @@ export const Footer = React.createClass({
 		return (
 			<footer id="footer">
 				<div className="footer_container clearfix">
-					<div className="_sg-12 _nr_sg-4 _nl_sg-6">
-						<p>League Logo</p>
+					<div className="logo _sg-12 _nr_sg-4 _nl_sg-6">
+						<img src="../images/logo_w.png" />
 					</div>
 					<nav className="_sg-6 _nr_sg-4 _nl_sg-3">
 						<h4>The League</h4>

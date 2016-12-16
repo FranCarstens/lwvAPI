@@ -4,9 +4,21 @@ header#header {
 	.header_container {
 		background-color: $shadow;
 		nav {
+			padding-top: 3rem;
 			margin: 0 auto;
 			max-width: 1024px;
 			text-align: right;
+			position: relative;
+			.logo {
+				position: absolute;
+				display: block;
+				left: 0.5rem;
+				top: 2rem;		
+				img {
+					height:3rem;
+					width: auto;
+				}
+			}
 			ul {
 				li {
 					display: inline-block;
@@ -16,6 +28,17 @@ header#header {
 						text-align: center;
 					}
 				}
+			}
+		}
+	}
+}
+@media #{$tablet} {
+	.header_container {
+		.logo {
+			top: 1rem;
+			img {
+				height: 4.5rem;
+				width: auto;
 			}
 		}
 	}

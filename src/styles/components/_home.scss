@@ -63,9 +63,9 @@
 			padding: 4.5rem 1rem;
 			margin: 0 auto;
 			max-width: 1024px;
-			div.illustration {
-				padding: 0 4rem;
-			}
+		}
+		div.illustration {
+			padding: 0 4rem;
 		}
 	}
 	section.intro {
@@ -80,6 +80,18 @@
 	section.contrib {
 		background-color: $lgrey;
 		border-bottom: none;
+	}
+	@media #{$phone} {
+		section.intro {
+			overflow-x: hidden;
+			div.illustration {
+				padding: 0;
+				img {
+					width: 1440px;
+					max-width: 200%;
+				}
+			}
+		}
 	}
 	@media #{$tablet} {
 		.hero {
