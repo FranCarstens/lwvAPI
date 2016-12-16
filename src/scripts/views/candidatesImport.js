@@ -32,8 +32,8 @@ const CandidateImport = React.createClass({
 		return (
 			<div className="body_wrapper">
 				<Header />
-				<IsLoading isLoading={isLoading} />
 				<section className="content">
+					<IsLoading isLoading={isLoading} />
 					<CandidateImportForm />
 				</section>
 				<Footer />

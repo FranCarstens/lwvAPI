@@ -15,9 +15,9 @@ export const Header = React.createClass({
 					<nav>
 						<ul>
 							<li><a href="#home">Home</a></li>
-							<li><a href="#candidates">Candidates</a></li>
+							<li><a href="#candidates">Search</a></li>
 							{ ( H.userRole() > 0 )
-								? <li><a href="#my-pins">My Pins</a></li> : '' }
+								? <li><a href="#my-pins">My Candidates</a></li> : '' }
 							{ ( H.userRole() === 1 )
 								? <li><a href="#candidates/add">Add</a></li> : '' }
 							{ ( H.userRole() === 1 )

@@ -4,7 +4,7 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import { Header, Footer } from '../components/pageComponents'
+import { Header, Footer, IsLoading } from '../components/pageComponents'
 import AddCandidate from '../components/candidateAdd'
 
 // ### PRIMARY COMPONENTS
@@ -29,6 +29,7 @@ const CandidateAdd = React.createClass({
 			<div className="body_wrapper">
 				<Header />
 				<section className="content">
+					<IsLoading isLoading={isLoading} />
 					<AddCandidate />
 				</section>
 				<Footer />

@@ -14,8 +14,8 @@ const Candidates = React.createClass({
 		return Actions.refineModels(coll,query)
 	},
 	render() {
-		let coll = this.props.collection,
-			isLoading = !this.props.isLoading ? 'hidden' : 'visible'
+		let coll = this.props.collection
+			
 		if (location.hash === "#candidates") {
 			return (
 				<section className="content searchView">
@@ -24,7 +24,6 @@ const Candidates = React.createClass({
 						<p>Search for candidates by name, state, zipcode or electoral race.</p>
 						<SearchBar />
 					</header>
-					<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
 					{ this._refineModels(coll) }
 				</section>
 			)
@@ -32,7 +31,7 @@ const Candidates = React.createClass({
 		else {
 			return (
 				<section className="content favView">
-					<h2>My Pins</h2>
+					<h2>My Candidates</h2>
 					{ coll.map((el,index) => <CandidateSummary model={el} view="userpins" />) }
 				</section>
 			)

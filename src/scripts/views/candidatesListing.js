@@ -4,7 +4,7 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import { Header, Footer } from '../components/pageComponents'
+import { Header, Footer, IsLoading } from '../components/pageComponents'
 import Candidates from '../components/candidates'
 
 // ### PRIMARY COMPONENTS
@@ -24,11 +24,13 @@ const CandidatesListing = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		let currentColl = this.state.candidates
+		let currentColl = this.state.candidates,
+			isLoading = !this.state.isLoading ? 'hidden' : 'visible'
 		return (
 			<div className="body_wrapper candidatesListing">
 				<Header />
 				<div className="content_wrapper">
+					<IsLoading isLoading={isLoading} />
 					{ (this.state.candidate.length !== 0) && <Candidates collection={currentColl} query={this.state.searchQ} isLoading={this.state.isLoading} /> }
 				</div>
 				<Footer />

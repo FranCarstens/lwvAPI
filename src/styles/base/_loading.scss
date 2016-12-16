@@ -6,14 +6,18 @@
 
 // @include animation('progress 5s ease infinite');
 
+section.content {
+	position: relative;
+}
 .loading {
 	position: fixed;
 	top: 0;
+	right: 0;
+	bottom: 0;
 	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(255, 255, 255, 0.90);
+	background: rgba(255, 255, 255, 0.9);
 	z-index: 999;
+	overflow:hidden;
 	#load_inner {
 		position: absolute;
 		top: 0;
@@ -35,7 +39,7 @@
 	}
 }
 .loading.visible {
-	background: rgba(255, 255, 255, 1);
+	background: rgba(255, 255, 255, 0.9);
 
 }
 .loading.hidden {

@@ -4,7 +4,7 @@ import Store from '../store'
 import Actions from '../actions'
 
 // ### COMPONENTS & VARIABLES
-import { Header, Footer } from '../components/pageComponents'
+import { Header, Footer, IsLoading } from '../components/pageComponents'
 import Candidates from '../components/candidates'
 
 // ### PRIMARY COMPONENTS
@@ -29,8 +29,10 @@ const FavListing = React.createClass({
 		return (
 			<div className="body_wrapper candidatesListing">
 				<Header />
-				<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
-				{ (this.state.candidate.length !== 0) && <Candidates collection={currentColl} /> }
+				<section className="content">
+					<IsLoading isLoading={isLoading} />
+					{ (this.state.candidate.length !== 0) && <Candidates collection={currentColl} /> }
+				</section>
 				<Footer />
 			</div>
 		)
