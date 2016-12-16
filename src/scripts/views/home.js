@@ -8,9 +8,27 @@ import { Header, Footer } from '../components/pageComponents'
 
 // ### PRIMARY COMPONENTS
 const Home = React.createClass({
+	componentWillMount() {
+		Store.on('dataChanged', () => {
+			this.setState(
+				Store._getData()
+			)
+		})
+	},
+	componentDidMount() {
+		Store._setData({
+			isLoading: false
+		})
+	},
+	getInitialState() {
+		return Store._getData()
+	},
 	render() {
+		console.log(this.state)
+		let isLoading = !this.state.isLoading ? 'hidden' : 'visible'
 		return (
 			<div className="body_wrapper page_home">
+				<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
 				<Header />
 					<section className="hero">
 						<div className="intro">

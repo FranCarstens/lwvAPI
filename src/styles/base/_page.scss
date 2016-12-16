@@ -6,6 +6,7 @@ section.content {
 	section.content {
 		padding-left: 2rem;
 		padding-right: 2rem;
+		min-height: calc(100vh - 450px)
 	}
 }
 @media #{$narrow} {
@@ -16,7 +17,7 @@ section.content {
 }
 @media #{$wide} {
 	section.content {
-		
+		min-height: calc(100% - 450px);
 	}
 
 }

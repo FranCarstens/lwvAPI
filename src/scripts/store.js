@@ -17,7 +17,8 @@ const Store = _.extend(Backbone.Events, {
 		candidateFavs: new CandidateFavCollection(),
 		candidateFav: new CandidateFavModel(),
 		users: new UserCollection(),
-		searchQ: ''
+		searchQ: '',
+		isLoading: 'true'
 	},
 	_getDataProp(Prop) {
 		return this._data[Prop]

@@ -68,3 +68,11 @@ export const Footer = React.createClass({
 		)
 	}
 })
+export const IsLoading = React.createClass({
+	render() {
+		let isLoading = this.props.isLoading
+		return (
+			<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
+			)
+	}
+})

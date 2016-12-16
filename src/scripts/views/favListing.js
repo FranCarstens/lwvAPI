@@ -24,12 +24,13 @@ const FavListing = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		let currentColl = this.state.candidateFavs
-		console.log('thestore', Store._data, 'thestate', this.state, 'currentcoll', currentColl)
+		let currentColl = this.state.candidateFavs,
+			isLoading = !this.state.isLoading ? 'hidden' : 'visible'
 		return (
 			<div className="body_wrapper candidatesListing">
 				<Header />
-				{ (this.state.candidate.length !== 0) ? <Candidates collection={currentColl} /> : <div className="loading"></div> }
+				<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
+				{ (this.state.candidate.length !== 0) && <Candidates collection={currentColl} /> }
 				<Footer />
 			</div>
 		)
@@ -37,3 +38,5 @@ const FavListing = React.createClass({
 })
 
 export default FavListing
+
+// className={`loading ${isLoading}`}

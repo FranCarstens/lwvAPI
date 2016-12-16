@@ -27,13 +27,13 @@ const CandidateView = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		console.log('the candidate', this.state.candidate)
-		console.log('the candidate store', Store._data.candidate)
+		let isLoading = !this.state.isLoading ? 'hidden' : 'visible'
 		return (
 			<div className="body_wrapper">
 				<Header />
 					<section className="content">
-						{ this.state.candidate.id ? <Candidate model={this.state.candidate} /> : <div className="loading"></div> }
+						<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
+						{ this.state.candidate.id && <Candidate model={this.state.candidate} />}
 					</section>
 				<Footer />
 			</div>
@@ -42,3 +42,6 @@ const CandidateView = React.createClass({
 })
 
 export default CandidateView
+
+
+// className={`loading ${isLoading}`}

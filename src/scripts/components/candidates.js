@@ -14,7 +14,8 @@ const Candidates = React.createClass({
 		return Actions.refineModels(coll,query)
 	},
 	render() {
-		let coll = this.props.collection
+		let coll = this.props.collection,
+			isLoading = !this.props.isLoading ? 'hidden' : 'visible'
 		if (location.hash === "#candidates") {
 			return (
 				<section className="content searchView">
@@ -23,6 +24,7 @@ const Candidates = React.createClass({
 						<p>Search for candidates by name, state, zipcode or electoral race.</p>
 						<SearchBar />
 					</header>
+					<div className={`loading ${isLoading}`}><span id="load_inner"></span></div>
 					{ this._refineModels(coll) }
 				</section>
 			)

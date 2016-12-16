@@ -9,6 +9,21 @@ import AddCandidate from '../components/candidateAdd'
 
 // ### PRIMARY COMPONENTS
 const CandidateAdd = React.createClass({
+	componentWillMount() {
+		Store.on('dataChanged', () => {
+			this.setState(
+				Store._getData()
+			)
+		})
+	},
+	componentDidMount() {
+		Store._setData({
+			isLoading: false
+		})
+	},
+	getInitialState() {
+		return Store._getData()
+	},
 	render() {
 		return (
 			<div className="body_wrapper">

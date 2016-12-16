@@ -1,0 +1,25 @@
+@mixin keyframes($animated) {
+  @-webkit-keyframes #{$animated} {
+    @content;
+  }
+  @-moz-keyframes #{$animated} {
+    @content;
+  }  
+  @-ms-keyframes #{$animated} {
+    @content;
+  }
+  @-o-keyframes #{$animated} {
+    @content;
+  }  
+  @keyframes #{$animated} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}

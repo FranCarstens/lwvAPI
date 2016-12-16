@@ -97,6 +97,8 @@ const SubmissionForm = React.createClass({
 						<select name="party">
 							<option>D</option>
 							<option>R</option>
+							<option>G</option>
+							<option>L</option>
 						</select>
 					</div>
 					<div className="election_cycle _sg-5">

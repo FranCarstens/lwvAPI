@@ -1,0 +1,43 @@
+@include keyframes(rotate) {
+	0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+// @include animation('progress 5s ease infinite');
+
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(255, 255, 255, 0.90);
+	z-index: 999;
+	#load_inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 3rem;
+		width: 3rem;
+		margin: 0 auto;
+		display: block;
+		border-radius: 50%;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		@include animation('rotate 1s linear infinite')
+		transition: all .3s ease-in-out;	
+		border: 1px solid $outline;
+		border-top: 1px solid $red;
+	}
+}
+.loading.visible {
+	background: rgba(255, 255, 255, 1);
+
+}
+.loading.hidden {
+	background: rgba(255, 255, 255, 0);
+}

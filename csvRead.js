@@ -25,6 +25,7 @@ const importCsv = function(csvFile) {
 				console.log('ERROR', err)
 				console.log('DOCS',docs)
 			})
+			location.hash = '#candidates'
 		})
 }
 

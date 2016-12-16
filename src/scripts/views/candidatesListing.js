@@ -24,14 +24,12 @@ const CandidatesListing = React.createClass({
 		return Store._getData()
 	},
 	render() {
-		let currentColl = this.state.candidates,
-			contentClass = (this.state.searchQ.length !== 0) ? 'loaded' : 'unloaded'
-		console.log('current state',this.state)
+		let currentColl = this.state.candidates
 		return (
-			<div className={`body_wrapper candidatesListing ${contentClass}`}>
+			<div className="body_wrapper candidatesListing">
 				<Header />
 				<div className="content_wrapper">
-					{ (this.state.candidate.length !== 0) ? <Candidates collection={currentColl} query={this.state.searchQ} /> : <div className="loading"></div> }
+					{ (this.state.candidate.length !== 0) && <Candidates collection={currentColl} query={this.state.searchQ} isLoading={this.state.isLoading} /> }
 				</div>
 				<Footer />
 			</div>

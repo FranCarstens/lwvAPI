@@ -73,10 +73,14 @@ const Actions = {
 	},
 	fetchCandidates() {
 		let candiColl = new CandidateCollection()
+		Store._setData({
+			isLoading: true
+		})
 		candiColl.fetch()
 			.then( () => {
 				Store._setData({
-					candidates: candiColl
+					candidates: candiColl,
+					isLoading: false
 				})
 			})		
 		let favColl = new CandidateFavCollection()
@@ -93,6 +97,9 @@ const Actions = {
 			console.log('end fav stuff')
 	},
 	fetchCandidate(id) {
+		Store._setData({
+			isLoading: true
+		})
 		if (H.grabRoute(location.hash,0) === 'candidates') {
 				var candidate = new CandidateModel({ _id: id })
 			}
@@ -100,7 +107,8 @@ const Actions = {
 		candidate.fetch()
 			.then( () => {
 				Store._setData({
-					candidate: candidate
+					candidate: candidate,
+					isLoading: false
 				})
 			})
 	},

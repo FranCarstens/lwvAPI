@@ -44,9 +44,13 @@ const CandidateImportForm = React.createClass({
 	},
 	render() {
 		return (
-			<Dropzone disableClick ={false} multiple={false} accept={'text/csv'} onDrop={this._dropHandler}>
-				<div> Drop a csv, or click to add. </div>
-			</Dropzone>
+			<div className="drop_container">
+				<h3>Import Candidates</h3>
+				<p>CSV should follow the correct structure. Please reference the <a href="#docs">documentation</a> for more information.</p>
+				<Dropzone disableClick={false} multiple={false} accept={'text/csv'} onDrop={this._dropHandler}>
+					<div> Drag-n-Drop a csv, or click to add. </div>
+				</Dropzone>
+			</div>
 		)
 	}
 })

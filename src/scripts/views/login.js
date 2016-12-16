@@ -12,12 +12,19 @@ import UserRegister from '../components/userRegister'
 // ### PRIMARY COMPONENTS
 const Login = React.createClass({
 	componentWillMount() {
-		Actions.fetchUser()
 		Store.on('dataChanged', () => {
 			this.setState(
 				Store._getData()
 			)
 		})
+	},
+	componentDidMount() {
+		Store._setData({
+			isLoading: false
+		})
+	},
+	getInitialState() {
+		return Store._getData()
 	},
 	render() {
 		// console.log(this.state.users)

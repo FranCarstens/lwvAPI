@@ -34,9 +34,17 @@ button i {
 	padding: 0 0 0 0.5rem;
 }
 
-.loading {
-	height: 80vh;
-	background-image: url('../images/loading.gif');
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
+// .loading {
+// 	height: 80vh;
+// 	background-image: url('../images/loading.gif');
+// 	background-position: 50% 50%;
+// 	background-repeat: no-repeat;
+// }
+.visible {
+	visibility: visible;
+	transition: all 0.3s ease-in-out 0.5s;
+}
+.hidden {
+	transition: all 0.3s ease-in-out 0.5s;
+	visibility: hidden;
 }

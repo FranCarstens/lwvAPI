@@ -1,0 +1,22 @@
+.drop_container {
+	max-width: 480px;
+	margin: 0 auto;
+	text-align: center;
+	& > div {
+		padding: 2rem;
+		width: 480px !important;
+		height: 200px !important;
+		border: 1px dotted $lgrey !important;
+		border-radius: 1rem !important;
+		display: table-cell;
+		vertical-align: middle;
+		box-shadow: 0 0 5px $lgrey;
+		cursor: pointer;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			background-color: $shadow;
+			border: 10px solid $lgrey !important;
+			transition: all 0.1s ease-in-out;
+		}
+	}
+}
