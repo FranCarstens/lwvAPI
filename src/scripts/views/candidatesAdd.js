@@ -29,7 +29,6 @@ const CandidateAdd = React.createClass({
 			<div className="body_wrapper">
 				<Header />
 				<section className="content">
-					<IsLoading isLoading={isLoading} />
 					<AddCandidate />
 				</section>
 				<Footer />
